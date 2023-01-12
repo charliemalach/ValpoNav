@@ -2,24 +2,22 @@
 <html>
 
 <head>
-    <title>Valparaiso University Campus Map</title>
+    <title>ValpoNav - Valparaiso University Campus Map</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <link rel="stylesheet" href="map.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon.ico">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
     <script src="map.js"></script>
-
-
-
-
 </head>
 
 <body>
 
     <div class="banner">
-        <h1>Valparaiso University</h1>
+        <h1>ValpoNav</h1>
+        <h2>Valparaiso University Campus Navigation</h2>
     </div>
 
     <!-- Center the search bar -->
@@ -29,18 +27,16 @@
             <button type="submit" id="search-button">Search</button>
         </form>
     </center>
-
-
-
+    
     <div id="map"></div>
 
     <div id="menu">
         <a href="#" onclick="showBuilding('Christopher Center')">Christopher
-      <br>
-    <a href="#" onclick="showBuilding('Harre Union')">Harre Union</a>
-        <br>
+    <br>
+        <a href="#" onclick="showBuilding('Harre Union')">Harre Union</a>
+    <br>
         <a href="#" onclick="showBuilding('Weseman Hall')">Weseman Hall</a>
-        <br>
+    <br>
         <a href="#" onclick="showBuilding('Neils Science Center')">Neils Science Center</a>
     </div>
 
@@ -79,7 +75,6 @@
             // for a custom icon
             // icon: 'images/myCustomImage.png'
         }).addTo(map);
-
 
         // Add a tile layer to the map
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -157,5 +152,4 @@
         }
     </script>
 </body>
-
 </html>

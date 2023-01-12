@@ -1,0 +1,30 @@
+#----------------------------------------------------------------------------------------------------#
+
+ValpoNav Version 1.0.0, 1/12/23
+
+New Features:
+    - Application displays a map of the Valparaiso University area. 
+	- Application displays a list of buildings on Valparaiso University.
+	- Application allows user to find their exact location on the map. 
+	- Application allows user to click 'Home' to recenter the map.
+	- Application allows users to zoom in and out of map.
+	- Application allows users to click a building name which will display the building's location on the map.
+	- Application allows users to use a Search Bar to look for a specific building. 
+	
+
+Known Issues:
+	- Search function does not search for shortened version of the name
+	- Home button has a little weird box on the outside
+	- 'Navigation Location' is sometimes not accurate
+
+Expected Next Version:
+	- Application will display more CSS (a lot more)
+	- Application will have more locations
+	- Application will have more detail about the interior of the locations 
+	- Application will have a better functioning search bar
+
+
+Links:
+	- GitHub Repository: https://github.com/jklayhew/ValpoNav
+
+#----------------------------------------------------------------------------------------------------#
