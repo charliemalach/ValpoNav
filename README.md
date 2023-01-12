@@ -26,7 +26,7 @@ for functional purposes and database management for our software.
 A few examples of useful features.
 
 <p align="center">
-  <img src = "image/main.jpg" width=350>
+  <img src = "image/main.jpg" width=500>
 </p>
 
 ```
