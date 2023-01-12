@@ -39,6 +39,6 @@ $ Zoom Buttons --> allows users to zoom in and zoom out of the map for larger or
 
 ## Additional Documentation and Acknowledgments
 
-*  [Justin](https://github.com/jklayhew) 
-*  [JJ](https://github.com/jjohn120)
-*  [Charlie](https://github.com/charliemalach)
+*  [Justin](https://github.com/jklayhew) - Software Developer
+*  [JJ](https://github.com/jjohn120) - Software Developer
+*  [Charlie](https://github.com/charliemalach) - Software Developer
