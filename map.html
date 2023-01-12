@@ -5,53 +5,14 @@
     <title>Valparaiso University Campus Map</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="map.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="map.js"></script>
 
 
-    <style>
-        #map {
-            height: 600px;
-            margin-top: 50px;
-            margin-left: 250px;
-            margin-right: 250px;
-            border: 2px solid black;
-        }
-        
-        .banner {
-            background-color: #ffef10;
-            color: rgb(175, 109, 11);
-            text-align: center;
-            padding: 20px;
-        }
-        
-        #menu {
-            position: absolute;
-            top: 200px;
-            left: 80px;
-            width: 200px
-        }
-        
-        #search-button {
-            border: none;
-            padding: 10px;
-            font-size: 14px;
-        }
-        
-        #search-form {
-            position: center;
-            margin-top: 50px;
-            left: 100px;
-        }
-        
-        #search-input {
-            width: 150px;
-            padding: 5px;
-            font-size: 14px;
-            margin-right: 5px;
-        }
-    </style>
+
 
 </head>
 
@@ -69,60 +30,7 @@
         </form>
     </center>
 
-    <script>
-        // Create an array of building objects that includes the building name and location
-        var buildings = [{
-            name: 'Christopher Center',
-            lat: 41.4637,
-            lng: -87.0533
-        }, {
-            name: 'Harre Union',
-            lat: 41.4629,
-            lng: -87.0526
-        }, {
-            name: 'Weseman Hall',
-            lat: 41.4621,
-            lng: -87.0519
-        }, {
-            name: 'Neils Science Center',
-            lat: 41.4613,
-            lng: -87.0512
-        }];
-        var map = L.map('map').setView([41.4637, -87.0533], 16);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        for (let building of buildings) {
-            L.marker([building.lat, building.lng]).addTo(map)
-        }
-        // Define the showBuilding() function
-        function showBuilding(name) {
-            console.log("Building is:" + name);
-            // Iterate over the buildings array and find the building that matches the name passed in as an argument
-            for (let building of buildings) {
-                if (building.name === name) {
-                    // Pan the map to the location of the building
-                    map.panTo(new L.LatLng(building.lat, building.lng));
-                    break;
-                }
-            }
-        }
-        // Add an event listener to the form that listens for a submission event
-        document.getElementById('search-form').addEventListener('submit', event => {
-            event.preventDefault();
-            const searchInput = document.getElementById('search-input').value;
-            console.log("Search input:" + searchInput);
-            // Iterate over the buildings array and check for a building name match
-            for (let building of buildings) {
-                if (building.name.toLowerCase() === searchInput.toLowerCase()) {
-                    console.log("Match found:" + building.name);
-                    // If a match is found, call the showBuilding() function with the matching building name as its argument
-                    showBuilding(building.name);
-                    break;
-                }
-            }
-        });
-    </script>
+
 
     <div id="map"></div>
 
