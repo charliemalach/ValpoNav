@@ -110,3 +110,16 @@ for (var i = 0; i < buildings.length; i++) {
                 <a href="https://example.com" target="_blank">View inside</a>`);
     markers.push(marker);
 }
+
+function showBuildingMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < buildings.length; i++) {
+        if (buildings[i].name === name) {
+            //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
+            map.setView([buildings[i].lat, buildings[i].lng], 18);
+            var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
+            marker.bindPopup(buildings[i].name).openPopup();
+            break;
+        }
+    }
+}
