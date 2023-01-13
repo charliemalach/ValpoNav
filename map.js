@@ -18,6 +18,12 @@ var customControl = L.Control.extend({
     }
 });
 
+//scale button
+L.control.scale({
+    imperial: false,
+    position: 'bottomleft'
+}).addTo(map);
+
 map.addControl(new customControl());
 
 // Button for current location
