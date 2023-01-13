@@ -46,42 +46,52 @@
     </div>
 
     <div id="form">
-        <input type="checkbox" id="Christopher Center" value="Christopher Center" checked>
-        <label for="Christopher Center">Christopher Center</label>
-        <input type="checkbox" id="Harre Union" value="Harre Union" checked>
-        <label for="Harre Union">Harre Union</label>
-        <input type="checkbox" id="Weseman Hall" value="Weseman Hall" checked>
-        <label for="Weseman Hall">Weseman Hall</label>
-        <input type="checkbox" id="Neils Science Center" value="Neils Science Center" checked>
-        <label for="Neils Science Center">Neils Science CenterWeseman Hall</label>
+        <form>
+            <div>
+                <label for="Christopher Center">Christopher Center</label>
+                <input type="checkbox" id="Christopher Center" value="Christopher Center" checked>
+            </div>
+            <div>
+                <label for="Harre Union">Harre Union</label>
+                <input type="checkbox" id="Harre Union" value="Harre Union" checked>
+            </div>
+            <div>
+                <label for="Weseman Hall">Weseman Hall</label>
+                <input type="checkbox" id="Weseman Hall" value="Weseman Hall" checked>
+            </div>
+            <div>
+                <label for="Neils Science Center">Neils Science Center</label>
+                <input type="checkbox" id="Neils Science Center" value="Neils Science Center" checked>
+            </div>
         </form>
+    </div>
 
-        <script>
-            // Get all the checkboxes
-            var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    <script>
+        // Get all the checkboxes
+        var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-            // Listen for changes on the checkboxes
-            checkboxes.forEach(function(checkbox) {
-                checkbox.addEventListener("change", function() {
-                    // Retrieve the selected buildings
-                    var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+        // Listen for changes on the checkboxes
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener("change", function() {
+                // Retrieve the selected buildings
+                var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
-                    // Clear all markers from the map
-                    map.eachLayer(function(layer) {
-                        if (layer instanceof L.Marker) {
-                            map.removeLayer(layer);
-                        }
-                    });
+                // Clear all markers from the map
+                map.eachLayer(function(layer) {
+                    if (layer instanceof L.Marker) {
+                        map.removeLayer(layer);
+                    }
+                });
 
-                    // Loop through the buildings array and add a marker for each selected building
-                    buildings.forEach(function(building) {
-                        if (selectedBuildings.includes(building.name)) {
-                            L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
-                        }
-                    });
+                // Loop through the buildings array and add a marker for each selected building
+                buildings.forEach(function(building) {
+                    if (selectedBuildings.includes(building.name)) {
+                        L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
+                    }
                 });
             });
-        </script>
+        });
+    </script>
 
 
 
