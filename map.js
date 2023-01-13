@@ -18,7 +18,7 @@ var customControl = L.Control.extend({
     }
 });
 
-//scale button
+//scale icon
 L.control.scale({
     imperial: false,
     position: 'bottomleft'
