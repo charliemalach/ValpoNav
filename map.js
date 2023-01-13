@@ -1,4 +1,4 @@
-var map = L.map('map').setView([41.4638, -87.0444], 16);
+var map = L.map('map').setView([41.4628, -87.0442], 16);
 
 //home button
 var customControl = L.Control.extend({
