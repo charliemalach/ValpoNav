@@ -1,6 +1,6 @@
     .body {
-        background-color:  #e3dac8;
-        color:  #e3dac8;
+        background-color: #e3dac8;
+        color: #e3dac8;
     }
     
     #map {
@@ -15,22 +15,27 @@
     }
     
     .banner {
+        z-index: 1;
         background-color: #ffcc00;
         color: #613318;
         text-align: center;
         padding: 15px;
         width: 100%;
-        margin: 0 20px 20px;
+        /* margin: 0 20px 20px;  this was causing the banner issue */
         box-sizing: border-box;
     }
-
+    
+    #section {
+        width: 100%;
+    }
+    
     .search {
         background-color: #ffcc00;
         color: #613318;
         text-align: center;
         padding: 20px;
     }
-
+    
     #search-form {
         position: center;
         left: 100px;
@@ -56,7 +61,7 @@
         margin-right: 5px;
     }
     
-    #form { 
+    #form {
         display: flex;
         justify-content: center;
         margin: 0 20px 20px;
@@ -68,7 +73,6 @@
         left: 80px;
         width: 200px;
         border: 2px solid black;
-
     }
     
     #myButton {
@@ -89,10 +93,10 @@
         margin: 0;
         padding: 0
     }
-
-.form-pos {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
+    
+    .form-pos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
