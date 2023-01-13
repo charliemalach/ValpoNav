@@ -31,16 +31,6 @@
 
     <div id="map"></div>
 
-    <div id="menu">
-        <a href="#" onclick="showBuilding('Christopher Center')">Christopher
-    <br>
-        <a href="#" onclick="showBuilding('Harre Union')">Harre Union</a>
-        <br>
-        <a href="#" onclick="showBuilding('Weseman Hall')">Weseman Hall</a>
-        <br>
-        <a href="#" onclick="showBuilding('Neils Science Center')">Neils Science Center</a>
-    </div>
-
     <div>
         <script src="map.js"></script>
     </div>
@@ -53,23 +43,29 @@
                 </label>
                 <input type="checkbox" id="Christopher Center" value="Christopher Center" checked>
             </div>
-
-
             <div>
-                <label for="Harre Union">Harre Union</label>
+                <label for="Harre Union">
+                    <a href="#" onclick="showBuildingMarker('Harre Union')">Harre Union</a>
+                </label>
                 <input type="checkbox" id="Harre Union" value="Harre Union" checked>
             </div>
             <div>
-                <label for="Weseman Hall">Weseman Hall</label>
-                <input type="checkbox" id="Weseman Hall" value="Weseman Hall" checked>
+                <label for="Neils Science Center">
+                    <a href="#" onclick="showBuildingMarker('Neils Science Center')">Neils Science Center</a>
+                </label>
+                <input type="checkbox" id="Neils Science Center" value="Neils Science Center" checked>
             </div>
             <div>
-                <label for="Neils Science Center">Neils Science Center</label>
-                <input type="checkbox" id="Neils Science Center" value="Neils Science Center" checked>
+                <label for="Weseman Hall">
+                    <a href="#" onclick="showBuildingMarker('Weseman Hall')">Weseman Hall</a>
+                </label>
+                <input type="checkbox" id="Weseman Hall" value="Weseman Hall" checked>
             </div>
         </form>
     </div>
 
+
+    <!-- this needs to be moved -->
     <script>
         // Get all the checkboxes
         var checkboxes = document.querySelectorAll("input[type=checkbox]");
