@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>ValpoNav - Valparaiso University Campus Map</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
@@ -23,7 +22,7 @@
 
             <!-- Center the search bar -->
             <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search building" style="width: 250px">
+                <input type="text" id="search-input" placeholder="Search building..." style="width: 250px">
                 <button type="submit" id="search-button">Search</button>
             </form>
 
@@ -83,6 +82,31 @@
                     </label>
                     <input type="checkbox" id="Dominos Pizza" value="Dominos Pizza" checked>
                 </div>
+                <div>
+                    <label for="Panera Bread">
+                        <a href="#!" onclick="showBuildingMarker('Panera Bread')">Panera Bread</a>
+                    </label>
+                    <input type="checkbox" id="Panera Bread" value="Panera Bread" checked>
+                </div>
+                <div>
+                    <label for="Hungry Howies">
+                        <a href="#!" onclick="showBuildingMarker('Hungry Howies')">Hungry Howie's</a>
+                    </label>
+                    <input type="checkbox" id="Hungry Howies" value="Hungry Howies" checked>
+                </div>
+                <div>
+                    <label for="Jimmy Johns">
+                        <a href="#!" onclick="showBuildingMarker('Jimmy Johns')">Jimmy John's</a>
+                    </label>
+                    <input type="checkbox" id="Jimmy Johns" value="Jimmy Johns" checked>
+                </div>
+                <div>
+                    <label for="CVS Pharmacy">
+                        <a href="#!" onclick="showBuildingMarker('CVS Pharmacy')">CVS Pharmacy</a>
+                    </label>
+                    <input type="checkbox" id="CVS Pharmacy" value="CVS Pharmacy" checked>
+                </div>
+
         </div>
         
     </div>
@@ -111,7 +135,7 @@
                buildings.forEach(function(building) {
                    if (selectedBuildings.includes(building.name)) {
                        var marker = L.marker([building.lat, building.lng]).addTo(map);
-                       var popupContent = "<h4 class='building-name'>" + building.name + "</h4>" + "<a href='" + building.link + "' class='building-link'>View Inside</a>";
+                       var popupContent = "<h4 class='building-name'>" + building.name + "</h4>" + "<a href='" + building.link + "' class='building-link' target='_blank'>View Inside</a>";
                        marker.bindPopup(popupContent);
                    }
                });
