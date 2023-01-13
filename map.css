@@ -1,55 +1,68 @@
-#map {
-    height: 600px;
-    margin-top: 50px;
-    margin-left: 250px;
-    margin-right: 250px;
-    border: 2px solid black;
-}
-
-.banner {
-    background-color: #ffef10;
-    color: rgb(175, 109, 11);
-    text-align: center;
-    padding: 20px;
-}
-
-#menu {
-    position: absolute;
-    top: 200px;
-    left: 80px;
-    width: 200px
-}
-
-#search-button {
-    border: none;
-    padding: 10px;
-    font-size: 14px;
-}
-
-#search-form {
-    position: center;
-    margin-top: 50px;
-    left: 100px;
-}
-
-#search-input {
-    width: 150px;
-    padding: 5px;
-    font-size: 14px;
-    margin-right: 5px;
-}
-
-#form {
-    position: absolute;
-    display: grid;
-    flex-direction: column;
-    top: 500px;
-    left: 80px;
-    width: 200px
-}
-
-#myButton {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-}
+    #map {
+        height: 600px;
+        margin-top: 50px;
+        margin-left: 250px;
+        margin-right: 250px;
+        border: 2px solid black;
+    }
+    
+    .banner {
+        background-color: #ffef10;
+        color: rgb(175, 109, 11);
+        text-align: center;
+        padding: 20px;
+    }
+    
+    #menu {
+        position: absolute;
+        top: 200px;
+        left: 80px;
+        width: 200px
+    }
+    
+    #search-button {
+        border: none;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    #search-form {
+        position: center;
+        margin-top: 50px;
+        left: 100px;
+    }
+    
+    #search-input {
+        width: 150px;
+        padding: 5px;
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    
+    #form {
+        position: absolute;
+        display: grid;
+        flex-direction: column;
+        top: 500px;
+        left: 80px;
+        width: 200px
+    }
+    
+    #myButton {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    
+    .building-link {
+        display: block;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
+    
+    .building-name {
+        line-height: 1;
+        margin: 0;
+        padding: 0
+    }

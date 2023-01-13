@@ -116,38 +116,12 @@ function showBuildingMarker(name) {
             //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
             map.setView([buildings[i].lat, buildings[i].lng], 16);
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
-            marker.bindPopup(`<b>${buildings[i].name}</b><br>
-            <a href="${buildings[i].link}" target="_blank">View inside</a>`);
+            var popupContent = `<div class='building-name'>${buildings[i].name}</div>
+            <a href="${buildings[i].link}" target="_blank" class='building-link'>View inside</a>`;
+            marker.bindPopup(popupContent);
             markers.push(marker);
             marker.openPopup();
             break;
         }
     }
 }
-
-// this is for checking and unchecking boxes and providing link and name after
-var checkboxes = document.querySelectorAll("input[type=checkbox]");
-
-
-checkboxes.forEach(function(checkbox) {
-    checkbox.addEventListener("change", function() {
-        // Retrieve the selected buildings
-        var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-
-        // Clear all markers from the map
-        map.eachLayer(function(layer) {
-            if (layer instanceof L.Marker) {
-                map.removeLayer(layer);
-            }
-        });
-
-        // Loop through the buildings array and add a marker for each selected building
-        buildings.forEach(function(building) {
-            marker.bindPopup(`<b>${buildings[i].name}</b><br>
-            <a href="${buildings[i].link}" target="_blank">View inside</a>`);
-            markers.push(marker);
-            marker.openPopup();
-
-        });
-    });
-});
