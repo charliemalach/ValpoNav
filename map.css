@@ -38,3 +38,12 @@
     font-size: 14px;
     margin-right: 5px;
 }
+
+#form {
+    position: absolute;
+    display: grid;
+    flex-direction: column;
+    top: 500px;
+    left: 80px;
+    width: 200px
+}

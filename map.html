@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
     <script src="mapController.js"></script>
-    
+
 </head>
 
 <body>
@@ -28,16 +28,16 @@
             <button type="submit" id="search-button">Search</button>
         </form>
     </center>
-    
+
     <div id="map"></div>
 
     <div id="menu">
         <a href="#" onclick="showBuilding('Christopher Center')">Christopher
     <br>
         <a href="#" onclick="showBuilding('Harre Union')">Harre Union</a>
-    <br>
+        <br>
         <a href="#" onclick="showBuilding('Weseman Hall')">Weseman Hall</a>
-    <br>
+        <br>
         <a href="#" onclick="showBuilding('Neils Science Center')">Neils Science Center</a>
     </div>
 
@@ -45,5 +45,46 @@
         <script src="map.js"></script>
     </div>
 
+    <div id="form">
+        <input type="checkbox" id="Christopher Center" value="Christopher Center" checked>
+        <label for="Christopher Center">Christopher Center</label>
+        <input type="checkbox" id="Harre Union" value="Harre Union" checked>
+        <label for="Harre Union">Harre Union</label>
+        <input type="checkbox" id="Weseman Hall" value="Weseman Hall" checked>
+        <label for="Weseman Hall">Weseman Hall</label>
+        <input type="checkbox" id="Neils Science Center" value="Neils Science Center" checked>
+        <label for="Neils Science Center">Neils Science CenterWeseman Hall</label>
+        </form>
+
+        <script>
+            // Get all the checkboxes
+            var checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+            // Listen for changes on the checkboxes
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("change", function() {
+                    // Retrieve the selected buildings
+                    var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+                    // Clear all markers from the map
+                    map.eachLayer(function(layer) {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);
+                        }
+                    });
+
+                    // Loop through the buildings array and add a marker for each selected building
+                    buildings.forEach(function(building) {
+                        if (selectedBuildings.includes(building.name)) {
+                            L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+
 </body>
+
 </html>
