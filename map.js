@@ -68,7 +68,14 @@ var buildings = [{
     lat: 41.46482,
     lng: -87.04059,
     link: 'https://www.example1.com'
-}];
+}, {
+    name: 'Dominos Pizza',
+    lat: 41.46656, 
+    lng: -87.03962,
+    link: 'https://www.example1.com'
+}
+
+];
 
 // Function to create a marker for a building on the map
 function createMarker(building) {
