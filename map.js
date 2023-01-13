@@ -46,7 +46,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var buildings = [{
     name: 'Christopher Center',
     lat: 41.46268,
-    lng: -87.04299
+    lng: -87.04299,
+    link: 'https://www.example1.com'
 }, {
     name: 'Harre Union',
     lat: 41.46421,
@@ -54,11 +55,13 @@ var buildings = [{
 }, {
     name: 'Weseman Hall',
     lat: 41.46154,
-    lng: -87.05325
+    lng: -87.05325,
+    link: 'https://www.example1.com'
 }, {
     name: 'Neils Science Center',
     lat: 41.46482,
-    lng: -87.04059
+    lng: -87.04059,
+    link: 'https://www.example1.com'
 }];
 
 // Function to create a marker for a building on the map
