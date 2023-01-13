@@ -9,24 +9,7 @@ for (let building of buildings) {
     L.marker([building.lat, building.lng]).addTo(map)
 }
 
-// Create an array of building objects that includes the building name and location
-var buildings = [{
-    name: 'Christopher Center',
-    lat: 41.4637,
-    lng: -87.0533
-}, {
-    name: 'Harre Union',
-    lat: 41.4629,
-    lng: -87.0526
-}, {
-    name: 'Weseman Hall',
-    lat: 41.4621,
-    lng: -87.0519
-}, {
-    name: 'Neils Science Center',
-    lat: 41.4613,
-    lng: -87.0512
-}];
+
 
 
 // Define the showBuilding() function
@@ -102,25 +85,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-
-// Create an array of building objects that includes the building name and location
-var buildings = [{
-    name: 'Christopher Center',
-    lat: 41.46268,
-    lng: -87.04299
-}, {
-    name: 'Harre Union',
-    lat: 41.46421,
-    lng: -87.04226
-}, {
-    name: 'Weseman Hall',
-    lat: 41.46154,
-    lng: -87.05325
-}, {
-    name: 'Neils Science Center',
-    lat: 41.46482,
-    lng: -87.04059
-}];
 
 // Function to create a marker for a building on the map
 function createMarker(building) {

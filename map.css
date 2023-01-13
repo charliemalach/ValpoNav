@@ -61,6 +61,13 @@
         margin-right: 5px;
     }
     
+    .form-pos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+    }
+
     #form {
         display: flex;
         justify-content: center;
@@ -94,9 +101,3 @@
         padding: 0
     }
     
-    .form-pos {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
