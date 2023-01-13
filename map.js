@@ -116,7 +116,7 @@ function showBuildingMarker(name) {
     for (var i = 0; i < buildings.length; i++) {
         if (buildings[i].name === name) {
             //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
-            map.setView([buildings[i].lat, buildings[i].lng], 18);
+            map.setView([buildings[i].lat, buildings[i].lng], 16);
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
             marker.bindPopup(buildings[i].name).openPopup();
             break;
