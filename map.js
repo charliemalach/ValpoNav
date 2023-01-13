@@ -12,7 +12,7 @@ var customControl = L.Control.extend({
 
         container.innerHTML = "<button id='myButton'><i class='fa fa-home'></i></button>";
         container.onclick = function() {
-            map.setView([41.4646, -87.0448], 16);;
+            map.setView([41.4628, -87.0442], 16);
         }
         return container;
     }
