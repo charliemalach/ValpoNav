@@ -125,7 +125,6 @@ function showBuildingMarker(name) {
     }
 }
 
-
 // this is for checking and unchecking boxes and providing link and name after
 var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
@@ -144,10 +143,11 @@ checkboxes.forEach(function(checkbox) {
 
         // Loop through the buildings array and add a marker for each selected building
         buildings.forEach(function(building) {
-            if (selectedBuildings.includes(building.name)) {
-                var marker = L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
-                marker.bindPopup("<a href='https://example.com" + building.link + "'>" + building.name + "</a>");
-            }
+            marker.bindPopup(`<b>${buildings[i].name}</b><br>
+            <a href="${buildings[i].link}" target="_blank">View inside</a>`);
+            markers.push(marker);
+            marker.openPopup();
+
         });
     });
 });

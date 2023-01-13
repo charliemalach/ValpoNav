@@ -65,7 +65,6 @@
 
     <!-- this needs to be moved -->
     <script>
-        // Get all the checkboxes
         var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
         // Listen for changes on the checkboxes
@@ -84,8 +83,9 @@
                 // Loop through the buildings array and add a marker for each selected building
                 buildings.forEach(function(building) {
                     if (selectedBuildings.includes(building.name)) {
-                        L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
-
+                        var marker = L.marker([building.lat, building.lng]).addTo(map);
+                        var popupContent = "<h4 class='building-name'>" + building.name + "</h4>" + "<a href='" + building.link + "' class='building-link'>View Inside</a>";
+                        marker.bindPopup(popupContent);
                     }
                 });
             });
