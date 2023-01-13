@@ -7,10 +7,10 @@ var customControl = L.Control.extend({
     },
     onAdd: function(map) {
         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
-        container.style.backgroundColor = 'white';
-        container.style.width = '45px';
-        container.style.height = '30px';
-        container.innerHTML = "<button id='myButton'><i class='fa fa-home'></i> Home</button>";
+        
+        
+       
+        container.innerHTML = "<button id='myButton'><i class='fa fa-home'></i></button>";
         container.onclick = function() {
             map.setView([41.4646, -87.0448], 16);;
         }
@@ -117,6 +117,8 @@ for (var i = 0; i < buildings.length; i++) {
     markers.push(marker);
 }
 
+
+
 function showBuildingMarker(name) {
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < buildings.length; i++) {
@@ -124,6 +126,9 @@ function showBuildingMarker(name) {
             //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
             map.setView([buildings[i].lat, buildings[i].lng], 16);
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
+            marker.bindPopup(`<b>${building.name}</b><br>
+            <a href="https://example.com" target="_blank">View inside</a>`);
+markers.push(marker);
             marker.bindPopup(buildings[i].name).openPopup();
             break;
         }
