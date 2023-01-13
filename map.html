@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>ValpoNav - Valparaiso University Campus Map</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
@@ -40,11 +41,12 @@
 
     <!-- Positioning the Form -->
     <section>
-    <div class="form-pos">
-        <!-- Campus Buildings Checkboxes -->
-        <div id="form">
-            <h3 style="text-align: center">Campus Buildings</h3>
+        <div class="form-pos">
+            <!-- Campus Buildings Checkboxes -->
+            <div id="form">
+                <h3 style="text-align: center">Campus Buildings</h3>
                 <form>
+                    <input type="checkbox" id="selectAll" value="selectAll"> Select / Deselect All<br/><br/>
                     <div>
                         <label for="Christopher Center">
                             <a href="#!" onclick="showBuildingMarker('Christopher Center')">Christopher Center</a>
@@ -70,79 +72,80 @@
                         <input type="checkbox" id="Weseman Hall" value="Weseman Hall" checked>
                     </div>
                 </form>
-        </div>
-        
-        <!-- Off Campus / OneCard Checkboxes -->
-        <div id="form">
-            <h3 style="text-align: center">Off-Campus Buildings</h3>
-            <form>
-                <div>
-                    <label for="Dominos Pizza">
+            </div>
+
+            <!-- Off Campus / OneCard Checkboxes -->
+            <div id="form">
+                <h3 style="text-align: center">Off-Campus Buildings</h3>
+                <form>
+                    <input type="checkbox" id="selectAll" value="selectAll"> Select / Deselect All<br/><br/>
+                    <div>
+                        <label for="Dominos Pizza">
                         <a href="#!" onclick="showBuildingMarker('Dominos Pizza')">Dominos Pizza</a>
                     </label>
-                    <input type="checkbox" id="Dominos Pizza" value="Dominos Pizza" checked>
-                </div>
-                <div>
-                    <label for="Panera Bread">
+                        <input type="checkbox" id="Dominos Pizza" value="Dominos Pizza" checked>
+                    </div>
+                    <div>
+                        <label for="Panera Bread">
                         <a href="#!" onclick="showBuildingMarker('Panera Bread')">Panera Bread</a>
                     </label>
-                    <input type="checkbox" id="Panera Bread" value="Panera Bread" checked>
-                </div>
-                <div>
-                    <label for="Hungry Howies">
+                        <input type="checkbox" id="Panera Bread" value="Panera Bread" checked>
+                    </div>
+                    <div>
+                        <label for="Hungry Howies">
                         <a href="#!" onclick="showBuildingMarker('Hungry Howies')">Hungry Howie's</a>
                     </label>
-                    <input type="checkbox" id="Hungry Howies" value="Hungry Howies" checked>
-                </div>
-                <div>
-                    <label for="Jimmy Johns">
+                        <input type="checkbox" id="Hungry Howies" value="Hungry Howies" checked>
+                    </div>
+                    <div>
+                        <label for="Jimmy Johns">
                         <a href="#!" onclick="showBuildingMarker('Jimmy Johns')">Jimmy John's</a>
                     </label>
-                    <input type="checkbox" id="Jimmy Johns" value="Jimmy Johns" checked>
-                </div>
-                <div>
-                    <label for="CVS Pharmacy">
+                        <input type="checkbox" id="Jimmy Johns" value="Jimmy Johns" checked>
+                    </div>
+                    <div>
+                        <label for="CVS Pharmacy">
                         <a href="#!" onclick="showBuildingMarker('CVS Pharmacy')">CVS Pharmacy</a>
                     </label>
-                    <input type="checkbox" id="CVS Pharmacy" value="CVS Pharmacy" checked>
-                </div>
+                        <input type="checkbox" id="CVS Pharmacy" value="CVS Pharmacy" checked>
+                    </div>
+
+            </div>
 
         </div>
-        
-    </div>
     </section>
-    
-    
+
+
     <div>
         <!-- this needs to be moved -->
-   <script>
-       var checkboxes = document.querySelectorAll("input[type=checkbox]");
+        <script>
+            var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-       // Listen for changes on the checkboxes
-       checkboxes.forEach(function(checkbox) {
-           checkbox.addEventListener("change", function() {
-               // Retrieve the selected buildings
-               var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+            // Listen for changes on the checkboxes
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("change", function() {
+                    // Retrieve the selected buildings
+                    var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
-               // Clear all markers from the map
-               map.eachLayer(function(layer) {
-                   if (layer instanceof L.Marker) {
-                       map.removeLayer(layer);
-                   }
-               });
+                    // Clear all markers from the map
+                    map.eachLayer(function(layer) {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);
+                        }
+                    });
 
-               // Loop through the buildings array and add a marker for each selected building
-               buildings.forEach(function(building) {
-                   if (selectedBuildings.includes(building.name)) {
-                       var marker = L.marker([building.lat, building.lng]).addTo(map);
-                       var popupContent = "<h4 class='building-name'>" + building.name + "</h4>" + "<a href='" + building.link + "' class='building-link' target='_blank'>View Inside</a>";
-                       marker.bindPopup(popupContent);
-                   }
-               });
-           });
-       });
-   </script>
-   </div>
+                    // Loop through the buildings array and add a marker for each selected building
+                    buildings.forEach(function(building) {
+                        if (selectedBuildings.includes(building.name)) {
+                            var marker = L.marker([building.lat, building.lng]).addTo(map);
+                            var popupContent = "<h4 class='building-name'>" + building.name + "</h4>" + "<a href='" + building.link + "' class='building-link' target='_blank'>View Inside</a>";
+                            marker.bindPopup(popupContent);
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
 
 </body>
 
