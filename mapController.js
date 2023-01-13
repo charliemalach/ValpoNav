@@ -1,3 +1,14 @@
+// Create the map
+var map = L.map('map').setView([41.4646, -87.0448], 16);
+
+var map = L.map('map').setView([41.4637, -87.0533], 16);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+for (let building of buildings) {
+    L.marker([building.lat, building.lng]).addTo(map)
+}
+
 // Create an array of building objects that includes the building name and location
 var buildings = [{
     name: 'Christopher Center',
@@ -16,13 +27,8 @@ var buildings = [{
     lat: 41.4613,
     lng: -87.0512
 }];
-var map = L.map('map').setView([41.4637, -87.0533], 16);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-for (let building of buildings) {
-    L.marker([building.lat, building.lng]).addTo(map)
-}
+
+
 // Define the showBuilding() function
 function showBuilding(name) {
     console.log("Building is:" + name);
@@ -35,6 +41,7 @@ function showBuilding(name) {
         }
     }
 }
+
 // Add an event listener to the form that listens for a submission event
 document.getElementById('search-form').addEventListener('submit', event => {
     event.preventDefault();
@@ -50,8 +57,7 @@ document.getElementById('search-form').addEventListener('submit', event => {
         }
     }
 });
-// Create the map
-var map = L.map('map').setView([41.4646, -87.0448], 16);
+
 
 //home button
 var customControl = L.Control.extend({

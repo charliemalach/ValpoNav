@@ -1,16 +1,39 @@
+    .body {
+        background-color:  #e3dac8;
+        color:  #e3dac8;
+    }
+    
     #map {
         height: 600px;
-        margin-top: 50px;
-        margin-left: 250px;
-        margin-right: 250px;
+        width: 50%;
+        min-width: 30%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
         border: 2px solid black;
+        padding: 30px;
     }
     
     .banner {
-        background-color: #ffef10;
-        color: rgb(175, 109, 11);
+        background-color: #ffcc00;
+        color: #613318;
+        text-align: center;
+        padding: 15px;
+        width: 100%;
+        margin: 0 20px 20px;
+        box-sizing: border-box;
+    }
+
+    .search {
+        background-color: #ffcc00;
+        color: #613318;
         text-align: center;
         padding: 20px;
+    }
+
+    #search-form {
+        position: center;
+        left: 100px;
     }
     
     #menu {
@@ -26,12 +49,6 @@
         font-size: 14px;
     }
     
-    #search-form {
-        position: center;
-        margin-top: 50px;
-        left: 100px;
-    }
-    
     #search-input {
         width: 150px;
         padding: 5px;
@@ -39,13 +56,19 @@
         margin-right: 5px;
     }
     
-    #form {
-        position: absolute;
-        display: grid;
+    #form { 
+        display: flex;
+        justify-content: center;
+        margin: 0 20px 20px;
         flex-direction: column;
+        color: #613318;
+        background-color: #ffcc00;
+        padding: 15px;
         top: 500px;
         left: 80px;
-        width: 200px
+        width: 200px;
+        border: 2px solid black;
+
     }
     
     #myButton {
@@ -66,3 +89,10 @@
         margin: 0;
         padding: 0
     }
+
+.form-pos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
