@@ -131,15 +131,3 @@ for (var i = 0; i < buildings.length; i++) {
     marker.bindPopup(building.name);
     markers.push(marker)
 }
-
-$('#selectAll').click(function() {
-    if (this.checked) {
-        $(':checkbox').each(function() {
-            this.checked = true;
-        });
-    } else {
-        $(':checkbox').each(function() {
-            this.checked = false;
-        });
-    }
-});
