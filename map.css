@@ -5,7 +5,7 @@
     
     #map {
         height: 600px;
-        width: 50%;
+        width: 70%;
         min-width: 30%;
         display: flex;
         margin-left: auto;
@@ -67,7 +67,7 @@
         align-items: baseline;
         justify-content: center;
     }
-
+    
     #form {
         display: flex;
         justify-content: center;
@@ -100,4 +100,3 @@
         margin: 0;
         padding: 0
     }
-    
