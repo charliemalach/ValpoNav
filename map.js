@@ -7,9 +7,9 @@ var customControl = L.Control.extend({
     },
     onAdd: function(map) {
         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
-        
-        
-       
+
+
+
         container.innerHTML = "<button id='myButton'><i class='fa fa-home'></i></button>";
         container.onclick = function() {
             map.setView([41.4646, -87.0448], 16);;
@@ -109,17 +109,45 @@ for (var i = 0; i < buildings.length; i++) {
     markers.push(marker);
 }
 
-function showBuildingMarker(name) { //broken (needs to actually show the view inside)
+function showBuildingMarker(name) {
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < buildings.length; i++) {
         if (buildings[i].name === name) {
             //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
             map.setView([buildings[i].lat, buildings[i].lng], 16);
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
-            marker.bindPopup(`<b>${building.name}</b><br>
-            <a href="https://example.com" target="_blank">View inside</a>`).openPopup();
+            marker.bindPopup(`<b>${buildings[i].name}</b><br>
+            <a href="${buildings[i].link}" target="_blank">View inside</a>`);
             markers.push(marker);
+            marker.openPopup();
             break;
         }
     }
 }
+
+
+// this is for checking and unchecking boxes and providing link and name after
+var checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        // Retrieve the selected buildings
+        var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+        // Clear all markers from the map
+        map.eachLayer(function(layer) {
+            if (layer instanceof L.Marker) {
+                map.removeLayer(layer);
+            }
+        });
+
+        // Loop through the buildings array and add a marker for each selected building
+        buildings.forEach(function(building) {
+            if (selectedBuildings.includes(building.name)) {
+                var marker = L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
+                marker.bindPopup("<a href='https://example.com" + building.link + "'>" + building.name + "</a>");
+            }
+        });
+    });
+});
