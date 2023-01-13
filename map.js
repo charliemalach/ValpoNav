@@ -100,14 +100,6 @@ document.getElementById("search-form").addEventListener("submit", function(event
     }
 });
 
-function showBuilding(buildingName) {
-    for (var i = 0; i < markers.length; i++) {
-        if (markers[i]._popup._content == buildingName) {
-            markers[i].openPopup();
-        }
-    }
-}
-
 var markers = [];
 for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
@@ -117,9 +109,7 @@ for (var i = 0; i < buildings.length; i++) {
     markers.push(marker);
 }
 
-
-
-function showBuildingMarker(name) {
+function showBuildingMarker(name) { //broken (needs to actually show the view inside)
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < buildings.length; i++) {
         if (buildings[i].name === name) {
@@ -127,9 +117,8 @@ function showBuildingMarker(name) {
             map.setView([buildings[i].lat, buildings[i].lng], 16);
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
             marker.bindPopup(`<b>${building.name}</b><br>
-            <a href="https://example.com" target="_blank">View inside</a>`);
-markers.push(marker);
-            marker.bindPopup(buildings[i].name).openPopup();
+            <a href="https://example.com" target="_blank">View inside</a>`).openPopup();
+            markers.push(marker);
             break;
         }
     }

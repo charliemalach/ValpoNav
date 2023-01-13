@@ -86,6 +86,7 @@
                 buildings.forEach(function(building) {
                     if (selectedBuildings.includes(building.name)) {
                         L.marker([building.lat, building.lng]).addTo(map).bindPopup(building.name);
+                        
                     }
                 });
             });
