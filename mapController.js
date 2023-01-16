@@ -9,9 +9,6 @@ for (let building of buildings) {
     L.marker([building.lat, building.lng]).addTo(map)
 }
 
-
-
-
 // Define the showBuilding() function
 function showBuilding(name) {
     console.log("Building is:" + name);
