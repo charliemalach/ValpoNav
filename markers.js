@@ -26,10 +26,10 @@ function showBuildingMarker(name) {
 }
 
 // marker variables for each location
-var Christopher = L.marker([41.46268, -87.04299]).addTo(map);
-var Harre = L.marker([41.46421, -87.04226]).addTo(map);
-var Weseman = L.marker([41.46154, -87.05325]).addTo(map);
-var Neils = L.marker([41.46482, -87.04059]).addTo(map);
+var Christopher = L.marker([41.46268, -87.04299])
+var Harre = L.marker([41.46421, -87.04226])
+var Weseman = L.marker([41.46154, -87.05325])
+var Neils = L.marker([41.46482, -87.04059])
 
 // Define the function to center the map on a specific location
 function centerMap(locationId) {
