@@ -53,14 +53,17 @@ var buildings = [{
     link: 'https://www.cvs.com/'
 }];
 
-// Add a marker for each building
-var markers = {};
-for (var i = 0; i < buildings.length; i++) {
-    var building = buildings[i];
-    markers[building.name] = L.marker([building.lat, building.lng]).addTo(map);
-}
 
-// Define the function to center the map on a specific building
-function centerMap(buildingName) {
-    map.panTo(markers[buildingName].getLatLng());
-}
+
+// i think this stuff is all duplicate, we might not need ?
+// Add a marker for each building
+// var markers = {};
+// for (var i = 0; i < buildings.length; i++) {
+//     var building = buildings[i];
+//     markers[building.name] = L.marker([building.lat, building.lng]).addTo(map);
+// }
+
+// // Define the function to center the map on a specific building
+// function centerMap(buildingName) {
+//     map.panTo(markers[buildingName].getLatLng());
+// }
