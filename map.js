@@ -64,3 +64,4 @@ for (var i = 0; i < buildings.length; i++) {
 function centerMap(buildingName) {
     map.panTo(markers[buildingName].getLatLng());
 }
+//JJ was here
