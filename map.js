@@ -66,9 +66,9 @@ var buildings = [{
 // // Define the function to center the map on a specific building
 // function centerMap(buildingName) {
 //     map.panTo(markers[buildingName].getLatLng());
+// // }
+// // Define the function to center the map on a specific building
+// function centerMap(buildingName) {
+//     map.panTo(markers[buildingName].getLatLng());
 // }
-// Define the function to center the map on a specific building
-function centerMap(buildingName) {
-    map.panTo(markers[buildingName].getLatLng());
-}
 //JJ was here
