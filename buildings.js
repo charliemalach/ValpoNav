@@ -1,5 +1,5 @@
 // Create an array of building objects that includes the building name and location
-var OnCampus = [{
+var buildings = [{
     name: 'Christopher Center',
     lat: 41.46268,
     lng: -87.04299,
@@ -18,11 +18,7 @@ var OnCampus = [{
     lat: 41.46482,
     lng: -87.04059,
     link: 'https://www.example1.com'
-}];
-
-
-
-var OffCampus = [{
+}, {
     name: 'Dominos Pizza',
     lat: 41.46656,
     lng: -87.03962,

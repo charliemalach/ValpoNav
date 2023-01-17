@@ -1,72 +1,95 @@
-var OnCampusMarkers = [];
-for (var i = 0; i < OnCampus.length; i++) {
-    var building = OnCampus[i];
+var markers = [];
+for (var i = 0; i < buildings.length; i++) {
+    var building = buildings[i];
     var marker = L.marker([building.lat, building.lng]).addTo(map);
     marker.bindPopup(`<b>${building.name}</b><br>
                 <a href="https://example.com" target="_blank">View inside</a>`);
-    OnCampusMarkers.push(marker);
-}
-
-function showCampusBuildingMarker(name) {
-    // loop through the OnCampus array to find a match for the provided building name
-    for (var i = 0; i < OnCampus.length; i++) {
-        if (OnCampus[i].name === name) {
-            var latLng = [OnCampus[i].lat, OnCampus[i].lng];
-            // center the map to the location of that building
-            map.setView(latLng, 17);
-            map.flyTo(latLng);
-            OnCampusMarkers[i].openPopup();
-            OnCampusMarkers[i].setOpacity(1);
-            break;
-        }
-    }
-}
-
-function hideCampusMarker() {
-    for (var i = 0; i < OnCampus.length; i++) {
-        OnCampusMarkers[i].setOpacity(0);
-    }
-}
-
-function showCampusMarker() {
-    for (var i = 0; i < OnCampusMarkers.length; i++) {
-        OnCampusMarkers[i].setOpacity(1);
-    }
-}
-
-
-var OffCampusMarkers = [];
-for (var i = 0; i < OffCampus.length; i++) {
-    var building = OffCampus[i];
-    var marker = L.marker([building.lat, building.lng]).addTo(map);
-    marker.bindPopup(`<b>${building.name}</b><br>
-                <a href="https://example.com" target="_blank">View inside</a>`);
-    OffCampusMarkers.push(marker);
+    markers.push(marker);
 }
 
 function showBuildingMarker(name) {
-    // loop through the OnCampus array to find a match for the provided building name
-    for (var i = 0; i < OffCampus.length; i++) {
-        if (OffCampus[i].name === name) {
-            var latLng = [OffCampus[i].lat, OffCampus[i].lng];
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < buildings.length; i++) {
+        if (buildings[i].name === name) {
+            var latLng = [buildings[i].lat, buildings[i].lng];
             // center the map to the location of that building
             map.setView(latLng, 17);
             map.flyTo(latLng);
-            OffCampusMarkers[i].openPopup();
-            OffCampusMarkers[i].setOpacity(1);
+            markers[i].openPopup();
+            markers[i].setOpacity(1);
             break;
         }
     }
 }
 
-function hideMarker() {
-    for (var i = 0; i < OffCampus.length; i++) {
-        OffCampusMarkers[i].setOpacity(0);
+function hideBuildingMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < buildings.length; i++) {
+        if (buildings[i].name === name) {
+            // center the map to the location of that building
+            markers[i].setOpacity(0);
+            break;
+        }
     }
 }
 
-function showMarker() {
-    for (var i = 0; i < OffCampusMarkers.length; i++) {
-        OffCampusMarkers[i].setOpacity(1);
+function showMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < buildings.length; i++) {
+        if (buildings[i].name === name) {
+            // center the map to the location of that building
+            markers[i].setOpacity(1);
+            break;
+        }
     }
 }
+
+
+// // marker variables for each location on-campus
+// var Christopher = L.marker([41.46268, -87.04299])
+// var Harre = L.marker([41.46421, -87.04226])
+// var Weseman = L.marker([41.46154, -87.05325])
+// var Neils = L.marker([41.46482, -87.04059])
+
+
+// // maker variables for each location off-campus
+// var Dominos = L.marker([41.46656, -87.03962])
+// var Panera = L.marker([41.46811, -87.0275])
+// var HungryHow = L.marker([41.46856,-87.0468])
+// var JimmyJohns = L.marker([41.46749, -87.04097])
+// var CVS = L.marker([41.45974, -87.06254])
+
+// // Define the function to center the map on a specific location
+// function centerMap(locationId) {
+//     switch (locationId) {
+//         case 'Christopher Center':
+//             map.panTo(Christopher.getLatLng());
+//             break;
+//         case 'Harre Union':
+//             map.panTo(Harre.getLatLng());
+//             break;
+//         case 'Neils Science Center':
+//             map.panTo(Neils.getLatLng());
+//             break;
+//         case 'Weseman Hall':
+//             map.panTo(Weseman.getLatLng());
+//             break;
+//         case 'Dominos Pizza':
+//             map.panTo(Dominos.getLatLng());
+//             break;
+//         case 'Panera Bread':
+//             map.panTo(Panera.getLatLng());
+//             break;
+//         case 'Hungry Howies':
+//             map.panTo(HungryHow.getLatLng());
+//             break;
+//         case 'Jimmy Johns':
+//             map.panTo(JimmyJohns.getLatLng());
+//             break;
+//         case 'CVS Pharmacy':
+//             map.panTo(CVS.getLatLng());
+//             break;
+//         default:
+//             break;
+//     }
+// }
