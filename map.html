@@ -23,7 +23,18 @@
 
             <!-- Center the search bar -->
             <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search building" style="width: 250px">
+                <input list = "buildings" type="text" id="search-input" placeholder="Search building" style="width: 250px">
+                <datalist id="buildings">
+                    <option value="Neils Science Center">Neils Science Center</option>
+                    <option value="Christopher Center">Christopher Center</option>
+                    <option value="Harre Union">Harre Union</option>
+                    <option value="Weseman Hall">Weseman Hall</option>
+                    <option value="Dominos Pizza">Dominos Pizza</option>
+                    <option value="Panera Bread">Panera Bread</option>
+                    <option value="Hungry Howies">Hungry Howies</option>
+                    <option value="Jimmy Johns">Jimmy Johns</option>
+                    <option value="CVS Pharmacy">CVS Pharmacy</option>
+                </datalist>
                 <button type="submit" id="search-button">Search</button>
             </form>
 
