@@ -11,7 +11,11 @@ document.getElementById("search-form").addEventListener("submit", function(event
             //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
             map.setView([buildings[i].lat, buildings[i].lng], 18);
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
-            marker.bindPopup(buildings[i].name).openPopup();
+            var latLng = [buildings[i].lat, buildings[i].lng];
+            marker.bindPopup(`<b>${buildings[i].name}</b><br>
+            <a href="${buildings[i].link}" target="_blank">View inside</a>`).openPopup();
+            map.flyTo(latLng);
+            marker.openPopup();
             break;
         }
     }
