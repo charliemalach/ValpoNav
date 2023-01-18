@@ -98,6 +98,7 @@ var buildings = [{
     lng: -87.06254,
     link: 'https://www.cvs.com/'
 }]; 
+
 for (var i=0; i < buildings.length;++i){
     str += '<option value="'+buildings[i].name+'" />'; // Storing options in variable
 }

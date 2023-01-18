@@ -3,7 +3,7 @@ for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
     var marker = L.marker([building.lat, building.lng]).addTo(map);
     marker.bindPopup(`<b>${building.name}</b><br>
-                <a href="https://example.com" target="_blank">View inside</a>`);
+                <a href="${buildings[i].link}" target="_blank">View inside</a>`);
     marker.addEventListener("click", function (e) {
         map.panTo(this.getLatLng());
     })

@@ -13,7 +13,7 @@ document.getElementById("search-form").addEventListener("submit", function(event
             var marker = L.marker([buildings[i].lat, buildings[i].lng]).addTo(map);
             var latLng = [buildings[i].lat, buildings[i].lng];
             marker.bindPopup(`<b>${buildings[i].name}</b><br>
-                <a href="https://example.com" target="_blank">View inside</a>`).openPopup();
+                <a href="${buildings[i].link}" target="_blank">View inside</a>`).openPopup();
             map.flyTo(latLng);
             marker.openPopup();
             break;
