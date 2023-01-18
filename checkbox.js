@@ -6,13 +6,6 @@ checkboxes.forEach(function(checkbox) {
         // Retrieve the selected buildings
         var selectedBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
-        // // Clear all markers from the map ()
-        // map.eachLayer(function(layer) {
-        //     if (layer instanceof L.Marker) {
-        //         map.removeLayer(layer);
-        //     }
-        // });
-
         // Loop through the buildings array and add a marker for each selected building
         buildings.forEach(function(building) {
             if (selectedBuildings.includes(building.name)) {
