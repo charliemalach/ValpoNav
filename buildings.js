@@ -1,3 +1,5 @@
+
+var str=''; // variable to store the options
 // Create an array of building objects that includes the building name and location
 var buildings = [{
     name: 'Christopher Center',
@@ -95,4 +97,9 @@ var buildings = [{
     lat: 41.45974,
     lng: -87.06254,
     link: 'https://www.cvs.com/'
-}];
+}]; 
+for (var i=0; i < buildings.length;++i){
+    str += '<option value="'+buildings[i].name+'" />'; // Storing options in variable
+}
+var my_list=document.getElementById("buildings");
+my_list.innerHTML = str;
