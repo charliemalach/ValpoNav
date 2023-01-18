@@ -13,6 +13,7 @@ checkboxes.forEach(function(checkbox) {
             }
             else {
                 hideBuildingMarker(building.name);
+                map.closePopup();
             }
         });
     });
