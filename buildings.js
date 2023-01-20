@@ -88,16 +88,16 @@ var buildings = [
         lat: 41.46154,
         lng: -87.05325,
         link: 'https://www.example1.com'
+    }, {
+        name: 'CVS Pharmacy',
+        lat: 41.45974,
+        lng: -87.06254,
+        link: 'https://www.cvs.com/'
     },  {
         name: 'Dominos Pizza',
         lat: 41.46656,
         lng: -87.03962,
         link: 'https://www.dominos.com/en/'
-    }, {
-        name: 'Panera Bread',
-        lat: 41.46811,
-        lng: -87.0275,
-        link: 'https://www.panerabread.com/en-us/home.html'
     }, {
         name: 'Hungry Howies',
         lat: 41.46856,
@@ -108,12 +108,12 @@ var buildings = [
         lat: 41.46749,
         lng: -87.04097,
         link: 'https://www.jimmyjohns.com/'
-}   , {
-        name: 'CVS Pharmacy',
-        lat: 41.45974,
-        lng: -87.06254,
-        link: 'https://www.cvs.com/'
-}]; 
+    }, {
+        name: 'Panera Bread',
+        lat: 41.46811,
+        lng: -87.0275,
+        link: 'https://www.panerabread.com/en-us/home.html'
+    } ]; 
 
 
 
