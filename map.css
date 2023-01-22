@@ -2,16 +2,27 @@
         background-color: white;
         color: #613318;
         font-family: "Lato", sans-serif;
+        margin: 0;
+        /* removes default margin */
+        padding: 0;
+        /* removes default padding */
+    }
+    
+    #map-container {
+        position: static;
+        width: 100%;
+        height: 100%;
+        /* sets the width to 100% of the parent container */
     }
     
     #map {
-        height: 635px;
+        height: 100%;
         width: 100%;
         display: flex;
         margin-left: auto;
         margin-right: auto;
         border: 2px solid black;
-        padding: 50px;
+        padding: 260px;
         z-index: 1;
         /* this will make the navbar appear above the map */
         top: 39px;
@@ -172,6 +183,12 @@
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
+    }
+    
+    .sidebar .checkbox-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .sidebar a {
