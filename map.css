@@ -91,7 +91,9 @@
     
     #form {
         display: flex;
-        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        display: flex;
         justify-content: center;
         margin: 0 20px 20px;
         flex-direction: column;
@@ -192,9 +194,11 @@
         flex-direction: column;
     }
     
-    .sidebar label {
+    .checkbox-label-container {
         display: flex;
         align-items: center;
+        margin-bottom: 3px;
+        /* This will add a 10px space between the labels */
     }
     
     .sidebar input[type="checkbox"] {
