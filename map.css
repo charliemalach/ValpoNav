@@ -206,8 +206,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 400px;
     }
-    
+
     .sidebar a {
         padding: 8px 8px 8px 30px;
         text-decoration: none;
@@ -226,6 +227,21 @@
         right: 25px;
         font-size: 36px;
         margin-left: 50px;
+    }
+
+    .column1 {
+        float: left;
+        width: 70%;
+    }
+
+    .column2 {
+        float: left;
+        padding-top: 5px;
+    }
+
+    .row:after{
+        display: table;
+        clear: both;
     }
     
     .openbtn {
@@ -301,6 +317,18 @@
     
     body {
         background: #f0faff;
+    }
+
+    
+    .float-child {
+        
+        float: left;
+        
+    }
+
+    .float-child2 {
+        padding-top: 10px;
+        float: right;
     }
     
     .nav {
