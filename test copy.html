@@ -24,41 +24,41 @@
 </head>
 
 <body>
-    <nav class="nav">
-        <button class="openbtn" style="text-align: left" onclick="openNav()">☰</button>
-        <i class="uil uil-bars navOpenBtn"></i>
-        <a href="#" class="logo">ValpoNav</a>
-
-        <ul class="nav-links">
-            <i class="uil uil-times navCloseBtn"></i>
-            <li><a href="#">About</a></li>
-            <li><a href="instructions.html" target="_blank">Instructions</a></li>
-        </ul>
-
-        <form id="search-form">
-            <input list="buildings" type="text" id="search-input" placeholder="Search building" style="width: 250px">
-            <datalist id="buildings"></datalist>
-            <script src="buildings.js"></script>
-            <script src="mapSearch.js"></script>
-            <button type="submit" id="search-button">Search</button>
-        </form>
-
-        <!-- other code that doesn't work, but looks nice -->
-
-        <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
-        <div class="search-box">
-            <i class="uil uil-search search-icon"></i>
-            
-            <input type="text" placeholder="Search here..." />
-        </div> -->
-    </nav>
-
-
-
+    <div>
+        <nav class="nav">
+            <button class="openbtn" style="text-align: left" onclick="toggleNav()">☰</button>
+            <i class="uil uil-bars navOpenBtn"></i>
+            <a href="#" class="logo">ValpoNav</a>
+    
+            <ul class="nav-links">
+                <i class="uil uil-times navCloseBtn"></i>
+                <li><a href="#">About</a></li>
+                <li><a href="instructions.html" target="_blank">Instructions</a></li>
+            </ul>
+    
+            <form id="search-form">
+                <input list="buildings" type="text" id="search-input" placeholder="Search building" style="width: 250px">
+                <datalist id="buildings"></datalist>
+                <script src="buildings.js"></script>
+                <script src="mapSearch.js"></script>
+                <button type="submit" id="search-button">Search</button>
+            </form>
+    
+            <!-- other code that doesn't work, but looks nice -->
+    
+            <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
+            <div class="search-box">
+                <i class="uil uil-search search-icon"></i>
+                
+                <input type="text" placeholder="Search here..." />
+            </div> -->
+        </nav>
+    </div>
+    
     <br>
 
     <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> -->
 
         <h3 style="text-align: center">On-Campus Buildings</h3>
         <br>
@@ -345,7 +345,6 @@
 </div>
 
 
-
     <div id="main">
         <section>
             <div id="map">
@@ -370,6 +369,19 @@
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
         }
+
+        function toggleNav() {
+        var nav = document.getElementById("mySidebar");
+        var other = document.getElementById("main");
+            if (nav.style.width === "400px") {
+            nav.style.width = "0";
+            other.style.marginLeft = "0";
+            } else {
+            nav.style.width = "400px";
+            other.style.marginLeft = "400px";
+        }
+}
+
     </script>
 
     <div>

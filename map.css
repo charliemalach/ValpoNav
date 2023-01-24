@@ -13,7 +13,7 @@
     }
     
     #map-container {
-        position: static;
+        position: relative;
         width: 100%;
         height: 100%;
         /* sets the width to 100% of the parent container */
@@ -28,6 +28,7 @@
         border: 2px solid black;
         padding: 260px;
         z-index: 1;
+        position: relative;
         /* this will make the navbar appear above the map */
         top: 39px;
         /* this will move the map down by 39px */
@@ -181,7 +182,7 @@
         height: 100%;
         top: 50px;
         width: 0;
-        position: fixed;
+        position: absolute;
         z-index: 1;
         left: 0;
         background-color: #ffcc00;
