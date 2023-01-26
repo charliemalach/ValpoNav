@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div>
+    <div id="nav">
         <nav class="nav">
             <button class="openbtn" style="text-align: left" onclick="toggleNav()">☰</button>
             <i class="uil uil-bars navOpenBtn"></i>
@@ -37,13 +37,6 @@
                 <li><a href="instructions.html" target="_blank">Instructions</a></li>
             </ul>
 
-            <!--- <form autocomplete="off" >
-                <div class="autocomplete" style="width:300px;">
-                  <input id="search-input" type="text"  placeholder="Enter a building">
-                </div>
-                <button type="submit" id="search-button">
-              </form>-->
-
 
             <form id="search-form" autocomplete="off">
                 <div class="autocomplete" style="width:300px;">
@@ -51,334 +44,314 @@
                 </div>
                 <button type="submit" id="search-button">Search</button>
             </form>
-            </form>
-            <script src="buildings.js">
-            </script>
-
-            <!-- other code that doesn't work, but looks nice -->
-
-            <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
-            <div class="search-box">
-                <i class="uil uil-search search-icon"></i>
-                
-                <input type="text" placeholder="Search here..." />
-            </div> -->
+            
+            <script src="buildings.js"></script>
         </nav>
-    </div>
+    </div>  <!-- ends 'nav' div -->
 
-    <br>
+    <!-- separate section -->
 
     <div id="mySidebar" class="sidebar">
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a> -->
-
-        <h3 style="text-align: center">On-Campus Buildings</h3>
+        <h2 style="text-align: center">Valparaiso Buildings</h2>
         <br>
 
         <div id="category-menu">
             <h3 class="category-title">
-                <span onclick="toggleCategory(event)">Category 1</span>
+                <span onclick="toggleCategory(event)" style="text-align: center;">On-Campus</span>
                 <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
             </h3>
             <div class="category-content">
-                <label for="checkbox1">Checkbox 1</label>
-                <input type="checkbox" id="checkbox1">
-                <label for="checkbox2">Checkbox 2</label>
-                <input type="checkbox" id="checkbox2">
-            </div>
+                <div class="checkbox-container">
+                    <!-- Campus Buildings Checkboxes -->
+                    <form id="form1">
+        
+                        <div class="row">
+        
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm1" value="selectAllForm1">
+                            </div>
+        
+                            <div class="column1">
+                                <a href="!#"><b>Deselect All</b></a>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm1" value="deselectAllForm1">
+                            </div>
+        
+        
+                            <div class="column1">
+                                <label for="Center for the Arts">
+                            <a href="#!" onclick="showBuildingMarker('Center for the Arts');">Center for the Arts</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Center for the Arts" value="Center for the Arts" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Center for the Sciences">
+                            <a href="#!" onclick="showBuildingMarker('Center for the Sciences');">Center for the Sciences</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Center for the Sciences" value="Center for the Sciences" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Christopher Center">
+                                <a href="#!" onclick="showBuildingMarker('Christopher Center');">Christopher Center</a>
+                                </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Christopher Center" value="Christopher Center" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="College of Arts and Sciences">
+                                <a href="#!" onclick="showBuildingMarker('College of Arts and Sciences');">College of Arts and Sciences</a>
+                                </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="College of Arts and Sciences" value="College of Arts and Sciences" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Duesenberg Welcome Center">
+                                <a href="#!" onclick="showBuildingMarker('Duesenberg Welcome Center');">Duesenberg Welcome Center</a>
+                                </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Duesenberg Welcome Center" value="Duesenberg Welcome Center" checked>
+                            </div>
+        
+        
+                            <div class="column1">
+                                <label for="Fites Center">
+                                <a href="#!" onclick="showBuildingMarker('Fites Center');">Fites Center</a>
+                                </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Fites Center" value="Fites Center" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Gellersen Center">
+                            <a href="#!" onclick="showBuildingMarker('Gellersen Center');">Gellersen Center</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Gellersen Center" value="Gellersen Center" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Harre Union">
+                            <a href="#!" onclick="showBuildingMarker('Harre Union');">Harre Union</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Harre Union" value="Harre Union" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Helge Center">
+                            <a href="#!" onclick="showBuildingMarker('Helge Center');">Helge Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Helge Center" value="Helge Center" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Kallay Christopher Hall">
+                            <a href="#!" onclick="showBuildingMarker('Kallay Christopher Hall');">Kallay Christopher Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Kallay Christopher Hall" value="Kallay Christopher Hall" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Kretzmann Hall">
+                            <a href="#!" onclick="showBuildingMarker('Kretzmann Hall');">Kretzmann Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Kretzmann Hall" value="Kretzmann Hall" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Meier Hall">
+                            <a href="#!" onclick="showBuildingMarker('Meier Hall');">Meier Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Meier Hall" value="Meier Hall" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Mueller Hall">
+                            <a href="#!" onclick="showBuildingMarker('Mueller Hall');">Mueller Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Mueller Hall" value="Mueller Hall" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Neils Science Center">
+                            <a href="#!" onclick="showBuildingMarker('Neils Science Center');">Neils Science Center</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Neils Science Center" value="Neils Science Center" checked>
+                            </div>
+        
+        
+                            <div class="column1">
+                                <label for="Schnabel Hall">
+                            <a href="#!" onclick="showBuildingMarker('Schnabel Hall');">Schnabel Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Schnabel Hall" value="Schnabel Hall" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Urschel Hall">
+                            <a href="#!" onclick="showBuildingMarker('Urschel Hall');">Urschel Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Urschel Hall" value="Urschel Hall" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Weseman Hall">
+                            <a href="#!" onclick="showBuildingMarker('Weseman Hall');">Weseman Hall</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Weseman Hall" value="Weseman Hall" checked>
+                            </div>
+        
+                        </div> <!-- ends 'row' div -->
+                    </form>
+                </div>  <!-- ends 'checkbox-container' div -->
+            </div>  <!-- ends 'category-content' -->    
+        </div> <!-- ends 'category menu' div -->
+
+        <br> <!-- separates 'on-campus' and 'off-campus' -->
+
+        <div id="category-menu">
             <h3 class="category-title">
-                <span onclick="toggleCategory(event)">Category 2</span>
+                <span onclick="toggleCategory(event)" style="text-align: center;">Off-Campus</span>
                 <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
             </h3>
             <div class="category-content">
-                <label for="checkbox3">Checkbox 3</label>
-                <input type="checkbox" id="checkbox3">
-                <label for="checkbox4">Checkbox 4</label>
-                <input type="checkbox" id="checkbox4">
-            </div>
-        </div>
 
-        <div class="checkbox-container">
-            <!-- Campus Buildings Checkboxes -->
-            <form id="form1">
-
-                <div class="row">
-
-                    <div class="column1">
-                        <a href="#!"><b>Select All</b></a>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" id="selectAllForm1" value="selectAllForm1">
-                    </div>
-
-                    <div class="column1">
-                        <a href="!#"><b>Deselect All</b></a>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" id="deselectAllForm1" value="deselectAllForm1">
-                    </div>
-
-
-                    <div class="column1">
-                        <label for="Center for the Arts">
-                    <a href="#!" onclick="showBuildingMarker('Center for the Arts');">Center for the Arts</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Center for the Arts" value="Center for the Arts" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Center for the Sciences">
-                    <a href="#!" onclick="showBuildingMarker('Center for the Sciences');">Center for the Sciences</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Center for the Sciences" value="Center for the Sciences" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Christopher Center">
-                        <a href="#!" onclick="showBuildingMarker('Christopher Center');">Christopher Center</a>
-                        </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Christopher Center" value="Christopher Center" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="College of Arts and Sciences">
-                        <a href="#!" onclick="showBuildingMarker('College of Arts and Sciences');">College of Arts and Sciences</a>
-                        </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="College of Arts and Sciences" value="College of Arts and Sciences" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Duesenberg Welcome Center">
-                        <a href="#!" onclick="showBuildingMarker('Duesenberg Welcome Center');">Duesenberg Welcome Center</a>
-                        </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Duesenberg Welcome Center" value="Duesenberg Welcome Center" checked>
-                    </div>
-
-
-                    <div class="column1">
-                        <label for="Fites Center">
-                        <a href="#!" onclick="showBuildingMarker('Fites Center');">Fites Center</a>
-                        </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Fites Center" value="Fites Center" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Gellersen Center">
-                    <a href="#!" onclick="showBuildingMarker('Gellersen Center');">Gellersen Center</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Gellersen Center" value="Gellersen Center" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Harre Union">
-                    <a href="#!" onclick="showBuildingMarker('Harre Union');">Harre Union</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Harre Union" value="Harre Union" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Helge Center">
-                    <a href="#!" onclick="showBuildingMarker('Helge Center');">Helge Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Helge Center" value="Helge Center" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Kallay Christopher Hall">
-                    <a href="#!" onclick="showBuildingMarker('Kallay Christopher Hall');">Kallay Christopher Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Kallay Christopher Hall" value="Kallay Christopher Hall" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Kretzmann Hall">
-                    <a href="#!" onclick="showBuildingMarker('Kretzmann Hall');">Kretzmann Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Kretzmann Hall" value="Kretzmann Hall" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Meier Hall">
-                    <a href="#!" onclick="showBuildingMarker('Meier Hall');">Meier Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Meier Hall" value="Meier Hall" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Mueller Hall">
-                    <a href="#!" onclick="showBuildingMarker('Mueller Hall');">Mueller Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Mueller Hall" value="Mueller Hall" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Neils Science Center">
-                    <a href="#!" onclick="showBuildingMarker('Neils Science Center');">Neils Science Center</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Neils Science Center" value="Neils Science Center" checked>
-                    </div>
-
-
-                    <div class="column1">
-                        <label for="Schnabel Hall">
-                    <a href="#!" onclick="showBuildingMarker('Schnabel Hall');">Schnabel Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Schnabel Hall" value="Schnabel Hall" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Urschel Hall">
-                    <a href="#!" onclick="showBuildingMarker('Urschel Hall');">Urschel Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Urschel Hall" value="Urschel Hall" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Weseman Hall">
-                    <a href="#!" onclick="showBuildingMarker('Weseman Hall');">Weseman Hall</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form1Checkbox" id="Weseman Hall" value="Weseman Hall" checked>
-                    </div>
-
-                </div>
-            </form>
-        </div>
-
-        <br>
-
-        <h3 style="text-align: center">Off-Campus Buildings</h3>
-        <br>
-
-        <div class="checkbox-container">
-            <form id="form2">
-
-                <div class="row">
-
-                    <div class="column1">
-                        <a href="#!"><b>Select All</b></a>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" id="selectAllForm2" value="selectAllForm2">
-                    </div>
-
-                    <div class="column1">
-                        <a href="!#"><b>Deselect All</b></a>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" id="deselectAllForm2" value="deselectAllForm2">
-                    </div>
-
-
-                    <div class="column1">
-                        <label for="CVS Pharmacy">
-                    <a href="#!" onclick="showBuildingMarker('CVS Pharmacy');">CVS Pharmacy</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form2Checkbox" id="CVS Pharmacy" value="CVS Pharmacy" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Dominos Pizza">
-                    <a href="#!" onclick="showBuildingMarker('Dominos Pizza'); ">Dominos Pizza</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form2Checkbox" id="Dominos Pizza" value="Dominos Pizza" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Hungry Howies">
-                    <a href="#!" onclick="showBuildingMarker('Hungry Howies');">Hungry Howie's</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form2Checkbox" id="Hungry Howies" value="Hungry Howies" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Jimmy Johns">
-                    <a href="#!" onclick="showBuildingMarker('Jimmy Johns');">Jimmy John's</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form2Checkbox" id="Jimmy Johns" value="Jimmy Johns" checked>
-                    </div>
-
-                    <div class="column1">
-                        <label for="Panera Bread">
-                    <a href="#!" onclick="showBuildingMarker('Panera Bread'); ">Panera Bread</a>
-                    </label>
-                    </div>
-
-                    <div class="column2">
-                        <input type="checkbox" class="form2Checkbox" id="Panera Bread" value="Panera Bread" checked>
-                    </div>
-
-                </div>
-            </form>
-        </div>
-    </div>
-    </div>
-
+                <div class="checkbox-container">
+                    <form id="form2">
+        
+                        <div class="row">
+        
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm2" value="selectAllForm2">
+                            </div>
+        
+                            <div class="column1">
+                                <a href="!#"><b>Deselect All</b></a>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm2" value="deselectAllForm2">
+                            </div>
+        
+        
+                            <div class="column1">
+                                <label for="CVS Pharmacy">
+                            <a href="#!" onclick="showBuildingMarker('CVS Pharmacy');">CVS Pharmacy</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="CVS Pharmacy" value="CVS Pharmacy" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Dominos Pizza">
+                            <a href="#!" onclick="showBuildingMarker('Dominos Pizza'); ">Dominos Pizza</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Dominos Pizza" value="Dominos Pizza" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Hungry Howies">
+                            <a href="#!" onclick="showBuildingMarker('Hungry Howies');">Hungry Howie's</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Hungry Howies" value="Hungry Howies" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Jimmy Johns">
+                            <a href="#!" onclick="showBuildingMarker('Jimmy Johns');">Jimmy John's</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Jimmy Johns" value="Jimmy Johns" checked>
+                            </div>
+        
+                            <div class="column1">
+                                <label for="Panera Bread">
+                            <a href="#!" onclick="showBuildingMarker('Panera Bread'); ">Panera Bread</a>
+                            </label>
+                            </div>
+        
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Panera Bread" value="Panera Bread" checked>
+                            </div>
+
+                        </div> <!-- ends 'row' div -->
+                    </form>
+                </div> <!-- ends 'checkbox-container' div -->
+            </div> <!-- ends 'category-content' -->
+        </div> <!-- ends 'category menu' div -->
+     
+</div> <!-- ends 'mySidebar' div -->
+
+<!-- separate section -->
 
     <div id="main">
         <section>
@@ -389,39 +362,11 @@
                 <script src="mapButtons.js"></script>
                 <script src="mapSearch.js"></script>
                 <script src="category.js"></script>
+                <script src="sideBar.js"></script>
+                <script src="checkbox.js"></script>
             </div>
         </section>
-    </div>
-
-
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "400px";
-            document.getElementById("main").style.marginLeft = "400px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-
-        function toggleNav() {
-            var nav = document.getElementById("mySidebar");
-            var other = document.getElementById("main");
-            if (nav.style.width === "400px") {
-                nav.style.width = "0";
-                other.style.marginLeft = "0";
-            } else {
-                nav.style.width = "400px";
-                other.style.marginLeft = "400px";
-            }
-        }
-    </script>
-
-    <div>
-        <script src="checkbox.js"></script>
-    </div>
+    </div>  <!-- ends 'main' div -->
 
 </body>
 
