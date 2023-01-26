@@ -35,14 +35,24 @@
                 <li><a href="#">About</a></li>
                 <li><a href="instructions.html" target="_blank">Instructions</a></li>
             </ul>
+
+            <!--- <form autocomplete="off" >
+                <div class="autocomplete" style="width:300px;">
+                  <input id="search-input" type="text"  placeholder="Enter a building">
+                </div>
+                <button type="submit" id="search-button">
+              </form>-->
+              
     
-            <form id="search-form">
-                <input list="buildings" type="text" id="search-input" placeholder="Search building" style="width: 250px">
-                <datalist id="buildings"></datalist>
-                <script src="buildings.js"></script>
-                <script src="mapSearch.js"></script>
+              <form id="search-form" autocomplete="off" >
+                <div class="autocomplete" style="width:300px;">
+                  <input type="text" id="search-input" placeholder="Search building" style="width: 250px">
+                </div>
                 <button type="submit" id="search-button">Search</button>
             </form>
+              </form>
+              <script src="buildings.js">
+              </script>
     
             <!-- other code that doesn't work, but looks nice -->
     
