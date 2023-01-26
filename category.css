@@ -1,0 +1,14 @@
+#category-menu .category-content {
+    display: none;
+}
+
+i.fa-angle-down {
+    float: right;
+    font-size: 0.8em;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.category-title.active i.fa-angle-down {
+    transform: rotate(180deg);
+}
