@@ -1,0 +1,218 @@
+        body {
+            background-color: white;
+            color: #613318;
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            /* removes default margin */
+            padding: 0;
+            /* removes default padding */
+        }
+        
+        .container {
+            height: 100%;
+        }
+        
+        #map-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* sets the width to 100% of the parent container */
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid black;
+            padding: 260px;
+            z-index: -1;
+            position: absolute;
+            /* this will make the navbar appear above the map */
+            top: 65px;
+            /* this will move the map down by 39px */
+        }
+        
+        .banner {
+            z-index: 1;
+            background-color: #ffcc00;
+            color: #613318;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            /* margin: 0 20px 20px;  this was causing the banner issue */
+            box-sizing: border-box;
+        }
+        
+        #section {
+            width: 100%;
+        }
+        
+        #menu {
+            position: absolute;
+            top: 200px;
+            left: 80px;
+            width: 200px
+        }
+        
+        .form-pos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: center;
+        }
+        
+        #form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 20px 20px;
+            flex-direction: column;
+            color: #613318;
+            background-color: #ffcc00;
+            padding: 15px;
+            top: 500px;
+            left: 80px;
+            width: 250px;
+            border: 2px solid black;
+        }
+        
+        #myButton {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        .building-link {
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .building-name {
+            line-height: 1;
+            margin: 0;
+            padding: 0
+        }
+        /* search bar */
+        
+        .autocomplete {
+            /*the container must be positioned relative:*/
+            position: relative;
+            display: inline-block;
+        }
+        
+        .input {
+            border: 1px solid transparent;
+            background-color: #f1f1f1;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        .input[type=text] {
+            background-color: #f1f1f1;
+            width: 95%;
+        }
+        
+        .input[type=submit] {
+            background-color: DodgerBlue;
+            color: #fff;
+        }
+        
+        .autocomplete-items {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 99;
+            /*position the autocomplete items to be the same width as the container:*/
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+        
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+        }
+        
+        .autocomplete-items div:hover {
+            /*when hovering an item:*/
+            background-color: #e9e9e9;
+        }
+        
+        .autocomplete-active {
+            /*when navigating through the items using the arrow keys:*/
+            background-color: DodgerBlue !important;
+            color: #ffffff;
+        }
+        
+        .column1 {
+            float: left;
+            width: 70%;
+        }
+        
+        .column2 {
+            float: left;
+            padding-top: 5px;
+        }
+        
+        .row:after {
+            display: table;
+            clear: both;
+        }
+        
+        .openbtn {
+            font-size: 28px;
+            cursor: pointer;
+            background-color: #613318;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            position: absolute;
+            left: 0;
+        }
+        
+        .openbtn:hover {
+            background-color: #444;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+        
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body {
+            background: #f0faff;
+        }
+        
+        .float-child {
+            float: left;
+        }
+        
+        .float-child2 {
+            padding-top: 10px;
+            float: right;
+        }
