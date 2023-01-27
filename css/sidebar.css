@@ -13,6 +13,20 @@
     flex-direction: column;
 }
 
+.openbtn {
+    font-size: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border: none;
+    left: 10;
+}
+
+.openbtn:hover {
+    background-color: #381e0e;
+}
+
 .sidebar label {
     display: flex;
     align-items: center;

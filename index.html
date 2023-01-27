@@ -29,26 +29,36 @@
 <body>
     <div id="nav">
         <nav class="nav">
-            <button class="openbtn" style="text-align: left" onclick="toggleNav()">☰</button>
-            <i class="uil uil-bars navOpenBtn"></i>
-            <a href="#" class="logo">ValpoNav</a>
 
+            <i class="uil uil-bars navOpenBtn"></i>
+            <button class="openbtn" style="text-align: left" onclick="toggleNav()">☰</button>
             <ul class="nav-links">
                 <i class="uil uil-times navCloseBtn"></i>
                 <li><a href="#">About</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">FAQ</a></li>
                 <li><a href="instructions.html" target="_blank">Instructions</a></li>
             </ul>
+            <form id="search-form" autocomplete="off" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="input-box" style="display: flex; align-items:center;">
+                    <i class="uil uil-search"></i>
+                    <input type="text" id="search-input" placeholder="Search buildings..." />
+                    <button type="submit" id="button" style=" border: none;
+                    border-radius: 8px;
+                    padding: 7px;
+                    margin: 0px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    right: 0px;">Search</button>
+                </div>
+            </form>
 
+            <a href="#" class="logo">
+                <span>ValpoNav</span>
+                <img src="image/favicon.ico" width="25" height="25" alt="ValpoNav logo">
+            </a>
             <!-- this creates a popup -->
             <!-- <li><a href="#" onclick="window.open('instructions.html', 'popup', 'width=600,height=600'); return false;">Instructions</a></li> -->
-
-
-            <form id="search-form" autocomplete="off">
-                <div class="autocomplete" style="width:300px;">
-                    <input type="text" id="search-input" placeholder="Search building" style="width: 250px">
-                </div>
-                <button type="submit" id="search-button">Search</button>
-            </form>
 
             <script src="buildings.js"></script>
         </nav>

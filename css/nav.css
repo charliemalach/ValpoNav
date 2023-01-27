@@ -1,12 +1,11 @@
     .nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 5px 200px;
-        background: #613318;
+        background: linear-gradient(to right, #381e0e, #FFA700, #ffb223, #FFA700, #381e0e);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: 60px;
     }
+    /* #391D0C, #482611, #863E15, #F2CF0D, #F8B430 */
     
     .nav,
     .nav .nav-links {
@@ -19,12 +18,12 @@
     }
     
     a {
-        color: #fff;
+        color: rgb(255, 255, 255);
         text-decoration: none;
     }
     
     .nav .logo {
-        font-size: 22px;
+        font-size: 30px;
         font-weight: 500;
     }
     
