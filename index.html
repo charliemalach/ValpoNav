@@ -67,13 +67,67 @@
 
     <div id="mySidebar" class="sidebar">
         <h2 style="text-align: center">Valparaiso Buildings</h2>
+
+        <br>
+        <!-- separates 'on-campus' and 'off-campus' -->
+
+        <div id="category-menu">
+            <h3 class="category-title">
+
+                <span onclick="toggleCategory(event)" style="text-align: center;">Health & Safety</span>
+                <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
+            </h3>
+            <div class="category-content">
+
+                <div class="checkbox-container">
+                    <form id="form2">
+
+                        <div class="row">
+
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm2" value="selectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <a href="!#"><b>Deselect All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm2" value="deselectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <label for="Panera Bread">
+                            <a href="#!" onclick="showBuildingMarker('Panera Bread'); ">CHANGE THIS</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Panera Bread" value="Panera Bread" checked>
+                            </div>
+
+                        </div>
+                        <!-- ends 'row' div -->
+                    </form>
+                </div>
+                <!-- ends 'checkbox-container' div -->
+            </div>
+            <!-- ends 'category-content' -->
+        </div>
+        <!-- ends 'category menu' div -->
+
         <br>
 
         <div id="category-menu">
             <h3 class="category-title">
-                <span onclick="toggleCategory(event)" style="text-align: center;">On-Campus</span>
+                <span onclick="toggleCategory(event)" style="text-align: center;">Lecture Halls</span>
                 <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
             </h3>
+            
             <div class="category-content">
                 <div class="checkbox-container">
                     <!-- Campus Buildings Checkboxes -->
@@ -138,16 +192,6 @@
                                 <input type="checkbox" class="form1Checkbox" id="College of Arts and Sciences" value="College of Arts and Sciences" checked>
                             </div>
 
-                            <div class="column1">
-                                <label for="Duesenberg Welcome Center">
-                                <a href="#!" onclick="showBuildingMarker('Duesenberg Welcome Center');">Duesenberg Welcome Center</a>
-                                </label>
-                            </div>
-
-                            <div class="column2">
-                                <input type="checkbox" class="form1Checkbox" id="Duesenberg Welcome Center" value="Duesenberg Welcome Center" checked>
-                            </div>
-
 
                             <div class="column1">
                                 <label for="Fites Center">
@@ -169,15 +213,6 @@
                                 <input type="checkbox" class="form1Checkbox" id="Gellersen Center" value="Gellersen Center" checked>
                             </div>
 
-                            <div class="column1">
-                                <label for="Harre Union">
-                            <a href="#!" onclick="showBuildingMarker('Harre Union');">Harre Union</a>
-                            </label>
-                            </div>
-
-                            <div class="column2">
-                                <input type="checkbox" class="form1Checkbox" id="Harre Union" value="Harre Union" checked>
-                            </div>
 
                             <div class="column1">
                                 <label for="Helge Center">
@@ -286,6 +321,172 @@
         <div id="category-menu">
             <h3 class="category-title">
 
+                <span onclick="toggleCategory(event)" style="text-align: center;">Recreational</span>
+                <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
+            </h3>
+            <div class="category-content">
+
+                <div class="checkbox-container">
+                    <form id="form2">
+
+                        <div class="row">
+
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm2" value="selectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <a href="!#"><b>Deselect All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm2" value="deselectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <label for="Duesenberg Welcome Center">
+                                <a href="#!" onclick="showBuildingMarker('Duesenberg Welcome Center');">Duesenberg Welcome Center</a>
+                                </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Duesenberg Welcome Center" value="Duesenberg Welcome Center" checked>
+                            </div>
+
+                            <div class="column1">
+                                <label for="Harre Union">
+                            <a href="#!" onclick="showBuildingMarker('Harre Union');">Harre Union</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form1Checkbox" id="Harre Union" value="Harre Union" checked>
+                            </div>
+
+                        </div>
+                        <!-- ends 'row' div -->
+                    </form>
+                </div>
+                <!-- ends 'checkbox-container' div -->
+            </div>
+            <!-- ends 'category-content' -->
+        </div>
+        <!-- ends 'category menu' div -->
+
+        <br>
+        <!-- separates 'on-campus' and 'off-campus' -->
+
+        <div id="category-menu">
+            <h3 class="category-title">
+
+                <span onclick="toggleCategory(event)" style="text-align: center;">Residential</span>
+                <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
+            </h3>
+            <div class="category-content">
+
+                <div class="checkbox-container">
+                    <form id="form2">
+
+                        <div class="row">
+
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm2" value="selectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <a href="!#"><b>Deselect All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm2" value="deselectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <label for="Panera Bread">
+                            <a href="#!" onclick="showBuildingMarker('Panera Bread'); ">CHANGE THIS</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Panera Bread" value="Panera Bread" checked>
+                            </div>
+
+                        </div>
+                        <!-- ends 'row' div -->
+                    </form>
+                </div>
+                <!-- ends 'checkbox-container' div -->
+            </div>
+            <!-- ends 'category-content' -->
+        </div>
+        <!-- ends 'category menu' div -->
+
+        <br>
+        <!-- separates 'on-campus' and 'off-campus' -->
+
+        <div id="category-menu">
+            <h3 class="category-title">
+
+                <span onclick="toggleCategory(event)" style="text-align: center;">Parking</span>
+                <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
+            </h3>
+            <div class="category-content">
+
+                <div class="checkbox-container">
+                    <form id="form2">
+
+                        <div class="row">
+
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm2" value="selectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <a href="!#"><b>Deselect All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm2" value="deselectAllForm2">
+                            </div>
+
+                            <div class="column1">
+                                <label for="Panera Bread">
+                            <a href="#!" onclick="showBuildingMarker('Panera Bread'); ">CHANGE THIS</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form2Checkbox" id="Panera Bread" value="Panera Bread" checked>
+                            </div>
+
+                        </div>
+                        <!-- ends 'row' div -->
+                    </form>
+                </div>
+                <!-- ends 'checkbox-container' div -->
+            </div>
+            <!-- ends 'category-content' -->
+        </div>
+        <!-- ends 'category menu' div -->
+
+        <br><br>
+        <!-- separates 'on-campus' and 'off-campus' -->
+
+        <div id="category-menu">
+            <h3 class="category-title">
+
                 <span onclick="toggleCategory(event)" style="text-align: center;">Off-Campus</span>
                 <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
             </h3>
@@ -372,6 +573,7 @@
             <!-- ends 'category-content' -->
         </div>
         <!-- ends 'category menu' div -->
+
 
     </div>
     <!-- ends 'mySidebar' div -->
