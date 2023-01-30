@@ -16,6 +16,6 @@ function toggleNav() {
         other.style.marginLeft = "0";
     } else {
         nav.style.width = "400px";
-        other.style.marginLeft = "400px";
+        // other.style.marginLeft = "400px";
     }
 }
