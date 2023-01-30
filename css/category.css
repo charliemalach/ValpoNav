@@ -7,6 +7,8 @@ i.fa-angle-down {
     font-size: 0.8em;
     margin-left: -5px;
     margin-right: 5px;
+    padding-right: 25px;
+    padding-top: 7px;
     transition: transform 0.3s;
 }
 
