@@ -3,11 +3,11 @@ for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
     var marker = L.marker([building.lat, building.lng]).addTo(map);
     marker.bindPopup(`<b>${building.name}</b><br>
-    <a href="building.html?buildingIndex=${buildings.indexOf(building)}" target="_blank">View inside</a>`);
-    marker.addEventListener("click", function (e) {
+    <a href="building.html?buildingIndex=${buildings.indexOf(building)}" target="_blank">More Info</a>`);
+    marker.addEventListener("click", function(e) {
         map.panTo(this.getLatLng());
     })
-    markers.push(marker);   
+    markers.push(marker);
 }
 
 
@@ -59,5 +59,5 @@ function showMarker(name) {
 //     popupAnchor: [1, -34],
 //     shadowSize: [41, 41]
 //   })
-  
+
 //   L.marker([41.46811, -87.0275], {icon: greenIcon}).addTo(map);
