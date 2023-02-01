@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Building Information</title>
+  </head>
+  <body>
+    <h1 id="building-name"></h1>
+    <p>Latitude: <span id="building-lat"></span></p>
+    <p>Longitude: <span id="building-lng"></span></p>
+    <a id="building-link"></a>
+    
+    <script src="js/buildings.js"></script>
+    <script>
+      // Get the selected building index from the URL
+      var index = parseInt(window.location.search.substring(1).split("=")[1]);
+      
+      // Display the building information
+      document.getElementById("building-name").innerHTML = buildings[index].name;
+      document.getElementById("building-lat").innerHTML = buildings[index].lat;
+      document.getElementById("building-lng").innerHTML = buildings[index].lng;
+      document.getElementById("building-link").innerHTML = buildings[index].link;
+      document.getElementById("building-link").href = buildings[index].link;
+    </script>
+  </body>
+</html>
