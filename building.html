@@ -43,11 +43,10 @@
     </div>
     <br>
 
-    <div class="building-contents">
+    <div class="building-contents" style="color: black">
     <h3><b>Description:</b> <span id="building-desc"></span></h3>
-    <p>Latitude: <span id="building-lat"></span></p>
-    <p>Longitude: <span id="building-lng"></span></p>
-    <a id="building-link"></a>
+    <br>
+    <a id="building-link" style="color: black"></a>
     </div>
     
     <script src="js/buildings.js"></script>
@@ -60,8 +59,6 @@
     
       // Display the building information
       document.getElementById("building-name").innerHTML = buildings[index].name;
-      document.getElementById("building-lat").innerHTML = buildings[index].lat;
-      document.getElementById("building-lng").innerHTML = buildings[index].lng;
       document.getElementById("building-desc").innerHTML = buildings[index].desc;
       document.getElementById("building-image").src = buildings[index].image;
       document.getElementById("building-link").innerHTML = buildings[index].link;
