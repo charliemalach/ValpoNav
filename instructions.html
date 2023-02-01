@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>ValpoNav - Valparaiso University Campus Map</title>
+    <title>ValpoNav - Instructions</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <link rel="stylesheet" href="map.css">
@@ -11,9 +10,36 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
-
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
 </head>
 
+<div id="nav">
+    <nav class="nav">
+        <ul class="nav-links" style="padding-left: 25px">
+
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="instructions.html" target="_blank">Instructions</a></li>
+        </ul>
+        
+
+        <a href="./index.html" class="logo" style="padding-right: 25px"> 
+            <span>ValpoNav</span>
+            <img src="image/favicon.ico" width="25" height="25" alt="ValpoNav logo">
+        </a>
+        <!-- this creates a popup -->
+        <!-- <li><a href="#" onclick="window.open('instructions.html', 'popup', 'width=600,height=600'); return false;">Instructions</a></li> -->
+    </nav>
+</div>
+
+<br><br><br>
+  
+  <script src="js/buildings.js"></script>
+
+<div>
 <h1>Valpo Nav instructions</h1>
 <h2>1. Click on or search for the building of your choice using the search bar</h2>
 <img src="image/search_instructions.PNG" height="300" width="500"> 
