@@ -3,24 +3,81 @@
   <head>
     <meta charset="UTF-8">
     <title>Building Information</title>
+    <link rel="stylesheet" href="css/building.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
   </head>
   <body>
-    <h1 id="building-name"></h1>
+
+    <div id="nav">
+      <nav class="nav">
+          <ul class="nav-links" style="padding-left: 25px">
+
+              <li><a href="#">About</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="instructions.html" target="_blank">Instructions</a></li>
+          </ul>
+          
+
+          <a href="./index.html" class="logo" style="padding-right: 25px"> 
+              <span>ValpoNav</span>
+              <img src="image/favicon.ico" width="25" height="25" alt="ValpoNav logo">
+          </a>
+          <!-- this creates a popup -->
+          <!-- <li><a href="#" onclick="window.open('instructions.html', 'popup', 'width=600,height=600'); return false;">Instructions</a></li> -->
+      </nav>
+  </div>
+
+  <br><br><br><br>
+
+    <div class="title">
+      <h1 id="building-name" style="text-align: center"></h1>
+    </div>
+    
+    <div class="building-img">
+    <img id="building-image" class="center"/>
+    </div>
+    <br>
+
+    <div class="building-contents">
+    <h3><b>Description:</b> <span id="building-desc"></span></h3>
     <p>Latitude: <span id="building-lat"></span></p>
     <p>Longitude: <span id="building-lng"></span></p>
     <a id="building-link"></a>
+    </div>
     
     <script src="js/buildings.js"></script>
+
+  <div>
+
     <script>
       // Get the selected building index from the URL
       var index = parseInt(window.location.search.substring(1).split("=")[1]);
-      
+    
       // Display the building information
       document.getElementById("building-name").innerHTML = buildings[index].name;
       document.getElementById("building-lat").innerHTML = buildings[index].lat;
       document.getElementById("building-lng").innerHTML = buildings[index].lng;
+      document.getElementById("building-desc").innerHTML = buildings[index].desc;
+      document.getElementById("building-image").src = buildings[index].image;
       document.getElementById("building-link").innerHTML = buildings[index].link;
       document.getElementById("building-link").href = buildings[index].link;
+
     </script>
+  </div>
+  <br>
+  <div class="building-schematics">
+    <h2>Building Layout</h2>
+    <p>This is where the layouts for the buildings will ideally go</p>
+
+    <div class="box"></div>
+    <div class="box"></div>
+
+
+  </div>
+
   </body>
+
 </html>

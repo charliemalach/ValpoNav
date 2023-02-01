@@ -7,7 +7,9 @@ var buildings = [
         name: 'Center for the Arts',
         lat: 41.46397,
         lng: -87.04003,
-        link: './building.html?buildingIndex=',
+        link: 'https://www.valpo.edu/center-for-the-arts/',
+        desc: "The Valparaiso University Center for the Arts is a vibrant space for artists and arts-lovers.The Valparaiso University Center for the Arts showcases Valpo’s resources for theatre, music, and art — including the Brauer Museum of Art and the Bach Institute. The space is a home for creativity, expression, and arts appreciation.",
+        image: 'https://www.valpo.edu/center-for-the-arts/files/2015/03/20130428-Campus-Scenes-024web3.jpg'
     }, {
         name: 'Center for the Sciences',
         lat: 41.46241,
@@ -17,7 +19,9 @@ var buildings = [
         name: 'Christopher Center',
         lat: 41.46268,
         lng: -87.04299,
-        link: './test.html?buildingIndex=',
+        link: 'https://library.valpo.edu/',
+        desc: "The Christopher Center Library is where people and information meet to bring about discovery and build knowledge with integrity. In an effort to enhance student learning and information literacy, we aim to create an inclusive environment where the campus community can ask hard questions, engage in scholarly conversations, and contribute to society with critical thought and compassion.",
+        image: 'https://library.valpo.edu/pics/cropped-Library_Top-Header_Exterior.jpg',
     }, {
         name: 'College of Arts and Sciences',
         lat: 41.46269,
