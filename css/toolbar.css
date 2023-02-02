@@ -1,28 +1,39 @@
-/* Icons from Font-Awesome  | Font Awesome by Dave Gandy - http://fontawesome.io*/
-
-
-/* Thanks to http://fa2png.io/ for icon png generation */
-
-.leaflet-control-navbar-fwd {
-    background-image: url("");
+.leaflet-control-navbar {
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
 }
 
-.leaflet-control-navbar-back {
-    background-image: url("");
+.leaflet-control-navbar a {
+    background-color: #eee;
+    border-bottom: 1px solid white;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+}
+
+.leaflet-control-navbar-zoom-in {
+    margin: auto;
+}
+
+.leaflet-control-navbar-zoom-out {
+    margin: auto;
+}
+
+.leaflet-control-navbar-geolocation {
+    margin: auto;
 }
 
 .leaflet-control-navbar-home {
-    background-image: url("");
+    margin: auto;
 }
 
-.leaflet-control-navbar-fwd-disabled {
-    background-image: url("");
-}
-
-.leaflet-control-navbar-back-disabled {
-    background-image: url("");
-}
-
-.leaflet-control-navbar-home-disabled {
-    background-image: url("");
+.leaflet-control-navbar a:hover {
+    background-color: #ddd;
 }

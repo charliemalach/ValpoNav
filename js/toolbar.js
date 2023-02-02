@@ -1,153 +1,118 @@
-/*
- *  Simple navigation control that allows back and forward navigation through map's view history
- */
+L.Control.NavBar = L.Control.extend({
+    options: {
+        position: 'topright',
+        zoomInTitle: "Zoom in",
+        zoomOutTitle: "Zoom out",
+        geolocationTitle: "Go to current location",
+        homeTitle: "Go to home map view"
+    },
 
-(function() {
-    L.Control.NavBar = L.Control.extend({
-        options: {
-            position: 'topright',
-            //center:,
-            //zoom :,
-            forwardTitle: "Go forward in map view history",
-            backTitle: "Go back in map view history",
-            homeTitle: "Go to home map view"
-        },
+    onAdd: function(map) {
+        var controlName = 'leaflet-control-navbar',
+            container = L.DomUtil.create('div', controlName + ' leaflet-bar');
 
-        onAdd: function(map) {
+        this._zoomInButton = this._createButton(this.options.zoomInTitle, controlName + '-zoom-in', container, this._zoomIn);
+        this._zoomOutButton = this._createButton(this.options.zoomOutTitle, controlName + '-zoom-out', container, this._zoomOut);
+        this._geolocationButton = this._createButton(this.options.geolocationTitle, controlName + '-geolocation', container, this._goGeolocation);
+        this._homeButton = this._createButton(this.options.homeTitle, controlName + '-home', container, this._goHome);
 
-            // Set options
-            if (!this.options.center) {
-                this.options.center = map.getCenter();
-            }
-            if (!this.options.zoom) {
-                this.options.zoom = map.getZoom();
-            }
-            options = this.options;
+        this._viewHistory = [{ center: map.getCenter(), zoom: map.getZoom() }];
+        this._curIndx = 0;
+        map.once('moveend', function() { map.on('moveend', this._updateHistory, this); }, this);
+        map.setView(map.getCenter(), map.getZoom());
 
-            // Create toolbar
-            var controlName = 'leaflet-control-navbar',
-                container = L.DomUtil.create('div', controlName + ' leaflet-bar');
+        return container;
+    },
 
-            // Add toolbar buttons
-            this._homeButton = this._createButton(options.homeTitle, controlName + '-home', container, this._goHome);
-            this._fwdButton = this._createButton(options.forwardTitle, controlName + '-fwd', container, this._goFwd);
-            this._backButton = this._createButton(options.backTitle, controlName + '-back', container, this._goBack);
+    onRemove: function(map) {
+        map.off('moveend', this._updateHistory, this);
+    },
 
-            // Initialize view history and index
-            this._viewHistory = [{ center: this.options.center, zoom: this.options.zoom }];
-            this._curIndx = 0;
-            this._updateDisabled();
-            map.once('moveend', function() { this._map.on('moveend', this._updateHistory, this); }, this);
-            // Set intial view to home
-            map.setView(options.center, options.zoom);
+    _zoomIn: function() {
+        this._map.zoomIn();
+    },
 
-            return container;
-        },
+    _zoomOut: function() {
+        this._map.zoomOut();
+    },
 
-        onRemove: function(map) {
-            this._map.off('moveend', this._updateHistory, this);
-        },
-
-        _goHome: function() {
-            this._map.setView(this.options.center, this.options.zoom);
-        },
-
-        _goBack: function() {
-            if (this._curIndx != 0) {
-                this._map.off('moveend', this._updateHistory, this);
-                this._map.once('moveend', function() { this._map.on('moveend', this._updateHistory, this); }, this);
-                this._curIndx--;
-                this._updateDisabled();
-                var view = this._viewHistory[this._curIndx];
-                this._map.setView(view.center, view.zoom);
-
-                console.log(this._curIndx + "|" + JSON.stringify(this._viewHistory));
-            }
-        },
-
-        _goFwd: function() {
-            if (this._curIndx != this._viewHistory.length - 1) {
-                this._map.off('moveend', this._updateHistory, this);
-                this._map.once('moveend', function() { this._map.on('moveend', this._updateHistory, this); }, this);
-                this._curIndx++;
-                this._updateDisabled();
-                var view = this._viewHistory[this._curIndx];
-                this._map.setView(view.center, view.zoom);
-
-                console.log(this._curIndx + "|" + JSON.stringify(this._viewHistory));
-            }
-        },
-
-        _createButton: function(title, className, container, fn) {
-            // Modified from Leaflet zoom control
-
-            var link = L.DomUtil.create('a', className, container);
-            link.href = '#';
-            link.title = title;
-
-            L.DomEvent
-                .on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
-                .on(link, 'click', L.DomEvent.stop)
-                .on(link, 'click', fn, this)
-                .on(link, 'click', this._refocusOnMap, this);
-
-            return link;
-        },
-
-        _updateHistory: function(e) {
-            var newView = { center: this._map.getCenter(), zoom: this._map.getZoom() };
-            var curView = this._viewHistory[this._curIndx];
-            var insertIndx = this._curIndx + 1;
-            this._viewHistory.splice(insertIndx, this._viewHistory.length - insertIndx, newView);
-            this._curIndx++;
-            // Update disabled state of toolbar buttons
-            this._updateDisabled();
-
-            console.log(this._curIndx + "|" + JSON.stringify(this._viewHistory));
-        },
-
-        _setFwdEnabled: function(enabled) {
-            var leafletDisabled = 'leaflet-disabled';
-            var fwdDisabled = 'leaflet-control-navbar-fwd-disabled';
-            if (enabled === true) {
-                L.DomUtil.removeClass(this._fwdButton, fwdDisabled);
-                L.DomUtil.removeClass(this._fwdButton, leafletDisabled);
+    _goGeolocation: function() {
+        var map = this._map;
+        var marker = null;
+        var self = this;
+        map.locate({
+            setView: false,
+            watch: true,
+            maxZoom: 24,
+            enableHighAccuracy: true
+        }).on('locationfound', function(e) {
+            if (marker) {
+                marker.setLatLng(e.latlng);
             } else {
-                L.DomUtil.addClass(this._fwdButton, fwdDisabled);
-                L.DomUtil.addClass(this._fwdButton, leafletDisabled);
+                marker = L.marker(e.latlng, {
+                    icon: L.divIcon({
+                        className: '',
+                        html: '<i class="fa fa-user" style="font-size:24px; background-color: transparent; width: 24px; height: 24px;"></i>',
+                        iconAnchor: [12, 12]
+                    })
+                }).addTo(map);
             }
-        },
+            map.flyTo(e.latlng, 16, {
+                animate: true
+            });
+        });
+    },
 
-        _setBackEnabled: function(enabled) {
-            var leafletDisabled = 'leaflet-disabled';
-            var backDisabled = 'leaflet-control-navbar-back-disabled';
-            if (enabled === true) {
-                L.DomUtil.removeClass(this._backButton, backDisabled);
-                L.DomUtil.removeClass(this._backButton, leafletDisabled);
-            } else {
-                L.DomUtil.addClass(this._backButton, backDisabled);
-                L.DomUtil.addClass(this._backButton, leafletDisabled);
-            }
-        },
 
-        _updateDisabled: function() {
-            if (this._curIndx == (this._viewHistory.length - 1)) {
-                this._setFwdEnabled(false);
-            } else {
-                this._setFwdEnabled(true);
-            }
+    _goHome: function() {
+        var view = this._viewHistory[0];
+        this._map.setView(view.center, view.zoom);
+    },
 
-            if (this._curIndx <= 0) {
-                this._setBackEnabled(false);
-            } else {
-                this._setBackEnabled(true);
-            }
+    _createButton: function(title, className, container, fn) {
+        var link = L.DomUtil.create('a', className, container);
+        link.href = '#';
+        link.title = title;
+
+        L.DomEvent
+            .on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
+            .on(link, 'click', L.DomEvent.stop)
+            .on(link, 'click', fn, this)
+            .on(link, 'click', this._refocusOnMap, this);
+
+        return link;
+    },
+
+    _updateHistory: function(e) {
+        var newView = { center: this._map.getCenter(), zoom: this._map.getZoom() };
+        var insertIndex = this._curIndx + 1;
+        this._viewHistory.splice(insertIndex, this._viewHistory.length - insertIndex, newView);
+        this._curIndx = insertIndex;
+    },
+
+    _createButton: function(title, className, container, fn) {
+        var link = L.DomUtil.create('a', className, container);
+        link.href = '#';
+        link.title = title;
+
+        var icon = L.DomUtil.create('i', 'fas fa-fw', link);
+
+        if (className === 'leaflet-control-navbar-zoom-in') {
+            icon.classList.add('fa-search-plus');
+        } else if (className === 'leaflet-control-navbar-zoom-out') {
+            icon.classList.add('fa-search-minus');
+        } else if (className === 'leaflet-control-navbar-geolocation') {
+            icon.classList.add('fa-map-marker-alt');
+        } else if (className === 'leaflet-control-navbar-home') {
+            icon.classList.add('fa-home');
         }
 
-    });
+        L.DomEvent
+            .on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
+            .on(link, 'click', L.DomEvent.stop)
+            .on(link, 'click', fn, this)
+            .on(link, 'click', this._refocusOnMap, this);
 
-    L.control.navbar = function(options) {
-        return new L.Control.NavBar(options);
-    };
-
-})();
+        return link;
+    }
+});
