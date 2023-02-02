@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/toolbar.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon.ico">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -124,7 +126,7 @@
                 <span onclick="toggleCategory(event)" style="text-align: center;">Lecture Halls</span>
                 <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
             </h3>
-            
+
             <div class="category-content">
                 <div class="checkbox-container">
                     <!-- Campus Buildings Checkboxes -->
@@ -580,6 +582,7 @@
     <div id="main">
         <section>
             <div id="map">
+                <script src="js/toolbar.js"></script>
                 <script src="js/map.js"></script>
                 <script src="js/buildings.js"></script>
                 <script src="js/markers.js"></script>
