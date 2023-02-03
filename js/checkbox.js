@@ -18,9 +18,27 @@ checkboxes.forEach(function(checkbox) {
     });
 });
 
+// Listen for changes on the checkboxes
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        // Retrieve the selected buildings
+        var selectedOffCampusBuildings = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+        // Loop through the buildings array and add a marker for each selected building
+        off_campus_buildings.forEach(function(off_campus_building) {
+            if (selectedOffCampusBuildings.includes(off_campus_building.name)) {
+                showsOffCampusMarker(off_campus_building.name);
+            } else {
+                hideOffCampusMarker(off_campus_building.name);
+                map.closePopup();
+            }
+        });
+    });
+});
+
+
 
 //this is the first form (on-campus)
-
 var selectAllForm1 = document.getElementById("selectAllForm1");
 var deselectAllForm1 = document.getElementById("deselectAllForm1");
 var form1Checkboxes = document.querySelectorAll(".form1Checkbox");
@@ -53,7 +71,6 @@ deselectAllForm1.addEventListener("change", function() {
 
 
 //this is the second form (off-campus)
-
 var selectAllForm2 = document.getElementById("selectAllForm2");
 var deselectAllForm2 = document.getElementById("deselectAllForm2");
 var form2Checkboxes = document.querySelectorAll(".form2Checkbox");
