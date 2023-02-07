@@ -1,7 +1,7 @@
 var str = ''; // variable to store the options
 
-var off_campus_buildings = [{
-
+var parking_lots = [{
+    
         name: 'CVS Pharmacy',
         lat: 41.45974,
         lng: -87.06254,

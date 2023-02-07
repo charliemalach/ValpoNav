@@ -5,91 +5,91 @@ var buildings = [{
     name: 'Center for the Arts',
     lat: 41.46397,
     lng: -87.04003,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
     desc: "The Valparaiso University Center for the Arts is a vibrant space for artists and arts-lovers.The Valparaiso University Center for the Arts showcases Valpo’s resources for theatre, music, and art — including the Brauer Museum of Art and the Bach Institute. The space is a home for creativity, expression, and arts appreciation.",
     image: 'https://www.valpo.edu/center-for-the-arts/files/2015/03/20130428-Campus-Scenes-024web3.jpg'
 }, {
     name: 'Center for the Sciences',
     lat: 41.46241,
     lng: -87.03952,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Christopher Center',
     lat: 41.46268,
     lng: -87.04299,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
     desc: "The Christopher Center Library is where people and information meet to bring about discovery and build knowledge with integrity. In an effort to enhance student learning and information literacy, we aim to create an inclusive environment where the campus community can ask hard questions, engage in scholarly conversations, and contribute to society with critical thought and compassion.",
     image: 'https://library.valpo.edu/pics/cropped-Library_Top-Header_Exterior.jpg',
 }, {
     name: 'College of Arts and Sciences',
     lat: 41.46269,
     lng: -87.04386,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Duesenberg Welcome Center',
     lat: 41.46123,
     lng: -87.04116,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Fites Center',
     lat: 41.4623,
     lng: -87.03775,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Gellersen Center',
     lat: 41.46271,
     lng: -87.03799,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Harre Union',
     lat: 41.46421,
     lng: -87.04226,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Helge Center',
     lat: 41.46273,
     lng: -87.0419,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Kallay Christopher Hall',
     lat: 41.46413,
     lng: -87.03859,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Kretzmann Hall',
     lat: 41.46219,
     lng: -87.04027,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Meier Hall',
     lat: 41.4622,
     lng: -87.0387,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Mueller Hall',
     lat: 41.46229,
     lng: -87.04493,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Neils Science Center',
     lat: 41.46482,
     lng: -87.04059,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Schnabel Hall',
     lat: 41.46387,
     lng: -87.03834,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Urschel Hall',
     lat: 41.46411,
     lng: -87.0376,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 }, {
     name: 'Weseman Hall',
     lat: 41.46154,
     lng: -87.05325,
-    link: './building.html?buildingIndex=',
+    link: './oncampus.html?buildingIndex=',
 
 }];
 

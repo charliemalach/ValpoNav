@@ -1,9 +1,10 @@
+//on campus markers
 var markers = [];
 for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
     var marker = L.marker([building.lat, building.lng]).addTo(map);
     marker.bindPopup(`<b>${building.name}</b><br>
-    <a href="building.html?buildingIndex=${buildings.indexOf(building)}" target="_blank">More Info</a>`);
+    <a href="oncampus.html?buildingIndex=${buildings.indexOf(building)}" target="_blank">More Info</a>`);
     marker.addEventListener("click", function(e) {
         map.panTo(this.getLatLng());
     });
@@ -47,6 +48,7 @@ function showMarker(name) {
     }
 }
 
+//off campus markers
 var redIcon = new L.Icon({
     iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -61,7 +63,7 @@ for (var i = 0; i < off_campus_buildings.length; i++) {
     var off_building = off_campus_buildings[i];
     var marker = L.marker([off_building.lat, off_building.lng], { icon: redIcon }).addTo(map);
     marker.bindPopup(`<b>${off_building.name}</b><br>
-    <a href="building.html?buildingIndex=${off_campus_buildings.indexOf(off_building)}" target="_blank">More Info</a>`);
+    <a href="offcampus.html?buildingIndex=${off_campus_buildings.indexOf(off_building)}" target="_blank">More Info</a>`);
     marker.addEventListener("click", function(e) {
         map.panTo(this.getLatLng());
     });
@@ -100,6 +102,66 @@ function showsOffCampusMarker(name) {
         if (off_campus_buildings[i].name === name) {
             // center the map to the location of that building
             offCampusmarkers[i].setOpacity(1);
+            break;
+        }
+    }
+}
+
+
+//residential hall markers
+var greenIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+var residentialMarkers = [];
+for (var i = 0; i < residential_halls.length; i++) {
+    var residential_hall = residential_halls[i];
+    var marker = L.marker([residential_hall.lat, residential_hall.lng], { icon: greenIcon }).addTo(map);
+    marker.bindPopup(`<b>${residential_hall.name}</b><br>
+    <a href="residencehalls.html?buildingIndex=${residential_halls.indexOf(residential_hall)}" target="_blank">More Info</a>`);
+    marker.addEventListener("click", function(e) {
+        map.panTo(this.getLatLng());
+    });
+    residentialMarkers.push(marker);
+}
+
+function showResHallsMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < residential_halls.length; i++) {
+        if (residential_halls[i].name === name) {
+            var latLng = [residential_halls[i].lat, residential_halls[i].lng];
+            // center the map to the location of that building
+            map.setView(latLng, 17);
+            map.flyTo(latLng);
+            residentialMarkers[i].openPopup();
+            residentialMarkers[i].setOpacity(1);
+            break;
+        }
+    }
+}
+
+function hideResHallMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < residential_halls.length; i++) {
+        if (residential_halls[i].name === name) {
+            // center the map to the location of that building
+            residentialMarkers[i].setOpacity(0);
+            break;
+        }
+    }
+}
+
+function showsResHallMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < residential_halls.length; i++) {
+        if (residential_halls[i].name === name) {
+            // center the map to the location of that building
+            residentialMarkers[i].setOpacity(1);
             break;
         }
     }

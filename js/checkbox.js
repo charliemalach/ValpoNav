@@ -36,6 +36,24 @@ checkboxes.forEach(function(checkbox) {
     });
 });
 
+// Listen for changes on the checkboxes
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        // Retrieve the selected buildings
+        var selectedOffResidentialHalls = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+        // Loop through the buildings array and add a marker for each selected building
+        residential_halls.forEach(function(residential_hall) {
+            if (selectedOffResidentialHalls.includes(residential_hall.name)) {
+                showsResHallMarker(residential_hall.name);
+            } else {
+                hideResHallMarker(residential_hall.name);
+                map.closePopup();
+            }
+        });
+    });
+});
+
 
 
 //this is the first form (on-campus)
@@ -101,6 +119,37 @@ deselectAllForm2.addEventListener("change", function() {
     }
 });
 
+
+//this is the second form (res-halls)
+var selectAllForm3 = document.getElementById("selectAllForm3");
+var deselectAllForm3 = document.getElementById("deselectAllForm3");
+var form3Checkboxes = document.querySelectorAll(".form3Checkbox");
+
+selectAllForm3.addEventListener("change", function() {
+    if (this.checked) {
+        deselectAllForm3.checked = false;
+        form3Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+        // trigger change event on checkboxes to update markers
+        form3Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+deselectAllForm3.addEventListener("change", function() {
+    if (this.checked) {
+        selectAllForm3.checked = false;
+        form3Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        // trigger change event on checkboxes to update markers
+        form3Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
 
 
 // ********************************************************************
