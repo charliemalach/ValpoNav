@@ -85,17 +85,13 @@ var buildings = [{
     lat: 41.46411,
     lng: -87.0376,
     link: './building.html?buildingIndex=',
-}, {    
+}, {
     name: 'Weseman Hall',
     lat: 41.46154,
     lng: -87.05325,
     link: './building.html?buildingIndex=',
 
 }];
-
-var buildings = buildings.concat(off_campus_buildings);
-console.log(buildings);
-
 
 function getFields(input, field) {
     var output = [];
@@ -218,4 +214,3 @@ for (var i = 0; i < buildings.length; ++i) {
 }
 var my_list = document.getElementById("buildings");
 my_list.innerHTML = str;
-

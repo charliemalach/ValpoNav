@@ -55,19 +55,22 @@
     <script src="js/off-campus-array.js"></script>
     <script src="js/buildings.js"></script>
     <script>
-
-        var megaArr = buildings.concat(off_campus_buildings);
-        console.log(megaArr);
-        
         // Get the selected building index from the URL
         var index = parseInt(window.location.search.substring(1).split("=")[1]);
-        // console.log(index);
+        var buildingArray = window.location.search.substring(1).split("=")[0] === "off_campus" ? off_campus_buildings : buildings;
+
         // Display the building information
-            document.getElementById("building-name").innerHTML = buildings[index].name;
-            document.getElementById("building-desc").innerHTML = buildings[index].desc;
-            document.getElementById("building-image").src = buildings[index].image;
-            document.getElementById("building-link").innerHTML = buildings[index].link;
-            document.getElementById("building-link").href = buildings[index].link;
+        document.getElementById("building-name").innerHTML = buildingArray[index].name;
+        document.getElementById("building-desc").innerHTML = buildingArray[index].desc;
+        document.getElementById("building-image").src = buildingArray[index].image;
+        document.getElementById("building-link").innerHTML = buildingArray[index].link;
+        document.getElementById("building-link").href = buildingArray[index].link;
+
+        document.getElementById("building-name").innerHTML = off_campus_buildings[index].name;
+        document.getElementById("building-desc").innerHTML = off_campus_buildings[index].desc;
+        document.getElementById("building-image").src = off_campus_buildings[index].image;
+        document.getElementById("building-link").innerHTML = off_campus_buildings[index].link;
+        document.getElementById("building-link").href = off_campus_buildings[index].link;
     </script>
 </body>
 

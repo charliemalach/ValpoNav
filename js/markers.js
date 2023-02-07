@@ -47,7 +47,6 @@ function showMarker(name) {
     }
 }
 
-
 var redIcon = new L.Icon({
     iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -58,11 +57,11 @@ var redIcon = new L.Icon({
 });
 
 var offCampusmarkers = [];
-for (var i = 16; i < buildings.length; i++) {
-    var off_building = buildings[i];
+for (var i = 0; i < off_campus_buildings.length; i++) {
+    var off_building = off_campus_buildings[i];
     var marker = L.marker([off_building.lat, off_building.lng], { icon: redIcon }).addTo(map);
     marker.bindPopup(`<b>${off_building.name}</b><br>
-    <a href="building.html?buildingIndex=${buildings.indexOf(off_building)}" target="_blank">More Info</a>`);
+    <a href="building.html?buildingIndex=${off_campus_buildings.indexOf(off_building)}" target="_blank">More Info</a>`);
     marker.addEventListener("click", function(e) {
         map.panTo(this.getLatLng());
     });
