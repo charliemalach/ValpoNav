@@ -98,11 +98,11 @@ L.Control.NavBar = L.Control.extend({
         var icon = L.DomUtil.create('i', 'fas fa-fw', link);
 
         if (className === 'leaflet-control-navbar-zoom-in') {
-            icon.classList.add('fa-search-plus');
+            icon.classList.add('fa-plus');
         } else if (className === 'leaflet-control-navbar-zoom-out') {
-            icon.classList.add('fa-search-minus');
+            icon.classList.add('fa-minus');
         } else if (className === 'leaflet-control-navbar-geolocation') {
-            icon.classList.add('fa-map-marker-alt');
+            icon.classList.add('fa-location-arrow');
         } else if (className === 'leaflet-control-navbar-home') {
             icon.classList.add('fa-home');
         }

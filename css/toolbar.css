@@ -1,20 +1,20 @@
 .leaflet-control-navbar {
-    background-color: white;
-    border: 1px solid gray;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(190, 190, 190);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
 
 .leaflet-control-navbar a {
-    background-color: #eee;
-    border-bottom: 1px solid white;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(190, 190, 190);
     display: block;
     width: 30px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     font-size: 18px;
-    color: gray;
+    color: rgb(31, 31, 31);
     cursor: pointer;
 }
 
