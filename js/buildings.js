@@ -99,8 +99,8 @@ function getFields(input, field) {
         output.push(input[i][field]);
     return output;
 }
-
-var search = buildings.concat(off_campus_buildings)
+//add any new array to the end of this (makes a big new array with all the arrays)
+var search = buildings.concat(off_campus_buildings).concat(parking_lots).concat(residential_halls);
 
 var building_names = getFields(search, "name"); // returns [ 1, 3, 5 ]
 
