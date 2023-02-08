@@ -100,7 +100,9 @@ function getFields(input, field) {
     return output;
 }
 
-var building_names = getFields(buildings, "name"); // returns [ 1, 3, 5 ]
+var search = buildings.concat(off_campus_buildings)
+
+var building_names = getFields(search, "name"); // returns [ 1, 3, 5 ]
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
