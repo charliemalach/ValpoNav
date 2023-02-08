@@ -1,0 +1,31 @@
+.features-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(60px, auto));
+    grid-gap: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 125px;
+}
+
+h1 {
+    padding-top: 3px;
+    border: 10px solid gold;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 33px;
+    background-color: #fff;
+}
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.feature-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
