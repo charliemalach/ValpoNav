@@ -54,6 +54,25 @@ checkboxes.forEach(function(checkbox) {
     });
 });
 
+// Listen for changes on the checkboxes
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        // Retrieve the selected buildings
+        var selectedParkingLots = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+        // Loop through the buildings array and add a marker for each selected building
+        parking_lots.forEach(function(parking_lot) {
+            if (selectedParkingLots.includes(parking_lot.name)) {
+                showsParkingLotMarker(parking_lot.name);
+            } else {
+                hideParkingLotMarker(parking_lot.name);
+                map.closePopup();
+            }
+        });
+    });
+});
+
+
 
 
 //this is the first form (on-campus)
@@ -146,6 +165,37 @@ deselectAllForm3.addEventListener("change", function() {
         });
         // trigger change event on checkboxes to update markers
         form3Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+//this is the second form (parking lots)
+var selectAllForm4 = document.getElementById("selectAllForm4");
+var deselectAllForm4 = document.getElementById("deselectAllForm4");
+var form4Checkboxes = document.querySelectorAll(".form4Checkbox");
+
+selectAllForm4.addEventListener("change", function() {
+    if (this.checked) {
+        deselectAllForm4.checked = false;
+        form4Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+        // trigger change event on checkboxes to update markers
+        form4Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+deselectAllForm4.addEventListener("change", function() {
+    if (this.checked) {
+        selectAllForm4.checked = false;
+        form4Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        // trigger change event on checkboxes to update markers
+        form4Checkboxes.forEach(function(checkbox) {
             checkbox.dispatchEvent(new Event('change'));
         });
     }

@@ -1,8 +1,17 @@
 //on campus markers
+var yellowIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+    });
+
 var markers = [];
 for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
-    var marker = L.marker([building.lat, building.lng]).addTo(map);
+    var marker = L.marker([building.lat, building.lng],{ icon: yellowIcon }).addTo(map);
     marker.bindPopup(`<b>${building.name}</b><br>
     <a href="oncampus.html?buildingIndex=${buildings.indexOf(building)}" target="_blank">More Info</a>`);
     marker.addEventListener("click", function(e) {
@@ -166,3 +175,63 @@ function showsResHallMarker(name) {
         }
     }
 }
+
+
+//parking lots markers 
+var blueIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+    });
+
+var parkingLotmarkers = [];
+for (var i = 0; i < parking_lots.length; i++) {
+    var parking_lot = parking_lots[i];
+    var marker = L.marker([parking_lot.lat, parking_lot.lng], { icon: blueIcon }).addTo(map);
+    marker.bindPopup(`<b>${parking_lot.name}</b><br>
+    <a href="offcampus.html?buildingIndex=${parking_lots.indexOf(parking_lot)}" target="_blank">More Info</a>`);
+    marker.addEventListener("click", function(e) {
+        map.panTo(this.getLatLng());
+    });
+    parkingLotmarkers.push(marker);
+}
+
+    function showParkingLotsMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < parking_lots.length; i++) {
+            if (parking_lots[i].name === name) {
+                var latLng = [parking_lots[i].lat, parking_lots[i].lng];
+                // center the map to the location of that building
+                map.setView(latLng, 17);
+                map.flyTo(latLng);
+                parkingLotmarkers[i].openPopup();
+                parkingLotmarkers[i].setOpacity(1);
+                break;
+            }
+        }
+    }
+    
+    function hideParkingLotMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < parking_lots.length; i++) {
+            if (parking_lots[i].name === name) {
+                // center the map to the location of that building
+                parkingLotmarkers[i].setOpacity(0);
+                break;
+            }
+        }
+    }
+    
+    function showsParkingLotMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < parking_lots.length; i++) {
+            if (parking_lots[i].name === name) {
+                // center the map to the location of that building
+                parkingLotmarkers[i].setOpacity(1);
+                break;
+            }
+        }
+    }
