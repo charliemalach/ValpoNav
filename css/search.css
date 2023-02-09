@@ -45,8 +45,8 @@
 
 .input-box .button {
     border: none;
-    border-radius: 8px;
-    padding: 7px;
+    border-radius: 0px;
+    padding: 0px;
     margin: 0px;
     font-size: 14px;
     cursor: pointer;
@@ -62,19 +62,26 @@
 
 @media screen and (max-width: 500px) {
     .input-box {
-        height: 66px;
         margin: 0 8px;
+        width: -webkit-fill-available;
+        
     }
     .input-box i {
         left: 12px;
         font-size: 25px;
+        
+        
     }
     .input-box input {
         padding: 0 112px 0 50px;
+        height:-webkit-fill-available;
+        width: -webkit-fill-available;
     }
     .input-box .button {
         right: 12px;
         font-size: 14px;
-        padding: 8px 18px;
+        padding: 8px 1px;
     }
+    
+   
 }
