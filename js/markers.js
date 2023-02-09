@@ -192,7 +192,7 @@ for (var i = 0; i < parking_lots.length; i++) {
     var parking_lot = parking_lots[i];
     var marker = L.marker([parking_lot.lat, parking_lot.lng], { icon: blueIcon }).addTo(map);
     marker.bindPopup(`<b>${parking_lot.name}</b><br>
-    <a href="offcampus.html?buildingIndex=${parking_lots.indexOf(parking_lot)}" target="_blank">More Info</a>`);
+    <a href="parking.html?buildingIndex=${parking_lots.indexOf(parking_lot)}" target="_blank">More Info</a>`);
     marker.addEventListener("click", function(e) {
         map.panTo(this.getLatLng());
     });

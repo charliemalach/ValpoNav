@@ -48,7 +48,10 @@
     <div class="building-contents" style="color: black">
         <h3><b>Description:</b> <span id="building-desc"></span></h3>
         <br>
+        <h3><b>Permitted to park here:</b> <span id="permitted"></span></h3>
         <a id="building-link" style="color: black"></a>
+        <br>
+        
     </div>
 
 
@@ -56,12 +59,12 @@
     <script>
         // Get the selected building index from the URL
         var index = parseInt(window.location.search.substring(1).split("=")[1]);
-
         // Display the building information
         document.getElementById("building-name").innerHTML = parking_lots[index].name;
         document.getElementById("building-desc").innerHTML = parking_lots[index].desc;
         document.getElementById("building-image").src = parking_lots[index].image;
         document.getElementById("building-link").innerHTML = parking_lots[index].link;
+        document.getElementById("permitted").innerHTML = parking_lots[index].permitted;
         document.getElementById("building-link").href = parking_lots[index].link;
     </script>
 </body>
