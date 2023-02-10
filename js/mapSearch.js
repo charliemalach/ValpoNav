@@ -22,3 +22,14 @@ document.getElementById("search-form").addEventListener("submit", function(event
         }
     }
 });
+function toggleNav() {
+    var nav = document.getElementById("search-input");
+    var other = document.getElementById("button");
+    if (nav.style.width === "400px") {
+        nav.style.width = "0";
+        other.style.marginLeft = "0";
+    } else {
+        nav.style.width = -webkit-fill-available;
+        // other.style.marginLeft = "400px";
+    }
+}
