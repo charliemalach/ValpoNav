@@ -41,6 +41,7 @@
     border: none;
     padding: 0 155px 0 65px;
     background-color: transparent;
+    position: relative;
 }
 
 .input-box .button {
@@ -64,7 +65,8 @@
     .input-box {
         margin: 0 8px;
         height: -webkit-fill-available;
-        width: 250px
+        width: 240px
+        
         
         
     }

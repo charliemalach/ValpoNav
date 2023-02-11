@@ -185,4 +185,11 @@
             padding: 10px 10px;
             text-decoration: none;
         }
+        .nav .logo {
+            font-size: 30px;
+            margin-right: 100px;
+            font-weight: 500;
+            position:relative;
+            left:100px
+        }
     }
