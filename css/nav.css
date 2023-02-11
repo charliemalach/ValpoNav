@@ -150,7 +150,7 @@
             left: 0;
         }
         .nav .navOpenBtn {
-            color: #613318;
+            color: transparent;
             font-size: 20px;
             cursor: pointer;
         }
@@ -189,7 +189,7 @@
             font-size: 30px;
             margin-right: 100px;
             font-weight: 500;
-            position:relative;
-            left:100px
+            position: relative;
+            left: 100px
         }
     }

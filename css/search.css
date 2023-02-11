@@ -66,19 +66,14 @@
         margin: 0 8px;
         height: -webkit-fill-available;
         width: 240px
-        
-        
-        
     }
     .input-box i {
         left: 12px;
         font-size: 25px;
-        
-        
     }
     .input-box input {
         padding: 0 112px 0 50px;
-        height:-webkit-fill-available;
+        height: -webkit-fill-available;
         width: -webkit-fill-available;
         font-size: 10px;
     }
@@ -87,6 +82,4 @@
         font-size: 14px;
         padding: 8px 1px;
     }
-    
-   
 }
