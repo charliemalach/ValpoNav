@@ -1,11 +1,11 @@
-.about-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 800px;
+.features-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(60px, auto));
+    grid-gap: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 125px;
 }
 
 h1 {
@@ -24,15 +24,8 @@ h1 {
     margin-bottom: 10px;
 }
 
-.about-title {
+.feature-title {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 20px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
 }
