@@ -5,7 +5,7 @@ var mapOptions = {
     zoomControl: false
 }
 
-var map = L.map('map', mapOptions).setView([41.4628, -87.0442], 16);
+var map = L.map('map', mapOptions).setView([41.4637, -87.0448], 16);
 
 new L.Control.NavBar().addTo(map);
 
