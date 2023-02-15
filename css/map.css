@@ -19,6 +19,10 @@
             /* sets the width to 100% of the parent container */
         }
         
+        .leaflet-zoom-box {
+            display: none;
+        }
+        
         #map {
             height: 93%;
             width: 98.5%;

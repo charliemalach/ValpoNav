@@ -1,5 +1,11 @@
 //initialize the map
-var map = L.map('map').setView([41.4628, -87.0442], 16);
+
+// Creating map options
+var mapOptions = {
+    zoomControl: false
+}
+
+var map = L.map('map', mapOptions).setView([41.4628, -87.0442], 16);
 
 new L.Control.NavBar().addTo(map);
 
