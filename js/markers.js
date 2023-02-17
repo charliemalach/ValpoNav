@@ -245,4 +245,62 @@ for (var i = 0; i < parking_lots.length; i++) {
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
+
+//Health & Safety markers 
+    var violetIcon = new L.Icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
+    var health_safety_markers = [];
+    for (var i = 0; i < health_safety_buildings.length; i++) {
+        var health_safe = health_safety_buildings[i];
+        var marker = L.marker([health_safe.lat, health_safe.lng], { icon: violetIcon }).addTo(map);
+        marker.bindPopup(`<b>${health_safe.name}</b><br>
+        <a href="healthsafety.html?buildingIndex=${health_safety_buildings.indexOf(health_safe)}" target="_blank">More Info</a>`);
+        marker.addEventListener("click", function(e) {
+            map.panTo(this.getLatLng());
+        });
+        health_safety_markers.push(marker);
+    }
+
+    function showHealthSafetyMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < health_safety_buildings.length; i++) {
+            if (health_safety_buildings[i].name === name) {
+                var latLng = [health_safety_buildings[i].lat, health_safety_buildings[i].lng];
+                // center the map to the location of that building
+                map.setView(latLng, 17);
+                map.flyTo(latLng);
+                health_safety_markers[i].openPopup();
+                health_safety_markers[i].setOpacity(1);
+                break;
+            }
+        }
+    }
     
+    function hideHealthSafetyMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < health_safety_buildings.length; i++) {
+            if (health_safety_buildings[i].name === name) {
+                // center the map to the location of that building
+                health_safety_markers[i].setOpacity(0);
+                break;
+            }
+        }
+    }
+    
+    function showsHealthSafetyMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < health_safety_buildings.length; i++) {
+            if (health_safety_buildings[i].name === name) {
+                // center the map to the location of that building
+                health_safety_markers[i].setOpacity(1);
+                break;
+            }
+        }
+    }

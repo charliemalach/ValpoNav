@@ -72,6 +72,24 @@ checkboxes.forEach(function(checkbox) {
     });
 });
 
+// Listen for changes on the checkboxes
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        // Retrieve the selected buildings
+        var selectedHealthSafety = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+        // Loop through the buildings array and add a marker for each selected building
+        health_safety_buildings.forEach(function(healthsafety) {
+            if (selectedHealthSafety.includes(healthsafety.name)) {
+                showsHealthSafetyMarker(healthsafety.name);
+            } else {
+                hideHealthSafetyMarker(healthsafety.name);
+                map.closePopup();
+            }
+        });
+    });
+});
+
 
 
 
@@ -139,7 +157,7 @@ deselectAllForm2.addEventListener("change", function() {
 });
 
 
-//this is the second form (res-halls)
+//this is the third form (res-halls)
 var selectAllForm3 = document.getElementById("selectAllForm3");
 var deselectAllForm3 = document.getElementById("deselectAllForm3");
 var form3Checkboxes = document.querySelectorAll(".form3Checkbox");
@@ -170,7 +188,7 @@ deselectAllForm3.addEventListener("change", function() {
     }
 });
 
-//this is the second form (parking lots)
+//this is the fourth form (health & safety)
 var selectAllForm4 = document.getElementById("selectAllForm4");
 var deselectAllForm4 = document.getElementById("deselectAllForm4");
 var form4Checkboxes = document.querySelectorAll(".form4Checkbox");
@@ -183,6 +201,37 @@ selectAllForm4.addEventListener("change", function() {
         });
         // trigger change event on checkboxes to update markers
         form4Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+deselectAllForm4.addEventListener("change", function() {
+    if (this.checked) {
+        selectAllForm4.checked = false;
+        form4Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        // trigger change event on checkboxes to update markers
+        form4Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+//this is the fifth form (parking lots)
+var selectAllForm5 = document.getElementById("selectAllForm5");
+var deselectAllForm5 = document.getElementById("deselectAllForm5");
+var form4Checkboxes = document.querySelectorAll(".form5Checkbox");
+
+selectAllForm5.addEventListener("change", function() {
+    if (this.checked) {
+        deselectAllForm5.checked = false;
+        form5Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+        // trigger change event on checkboxes to update markers
+        form5Checkboxes.forEach(function(checkbox) {
             checkbox.dispatchEvent(new Event('change'));
         });
     }

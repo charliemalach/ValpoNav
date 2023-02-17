@@ -58,6 +58,14 @@ var residential_halls = [{
         image: 'https://www.valpo.edu/reslife/files/2020/12/20140710-JLH-Campus-Construction-004-600x400.jpg'
     },  
     {
+        name: 'Scheele Hall',
+        lat: 41.46592,   
+        lng: -87.04256,
+        link: 'https://www.valpo.edu/reslife/residence-halls/promenade/',
+        desc: "Houses upperclass female students, including women in sororities. Sorority chapter rooms located on the first floor. Double rooms equipped with beds, bolsters, wall closets, desks with chairs, bookshelves, and dressers. Traditional corridor-style residence facility with community bathrooms that are cleaned daily by Housekeeping staff members. ",
+        image: 'https://marvel-b1-cdn.bc0a.com/f00000000181213/www.valpo.edu/reslife/wp-content/uploads/sites/169/nggallery/sheele-hall/20131108-JLH-Fall-Scenes-068.jpg'
+    },
+    {
         name: 'Wehrenberg Hall',
         lat: 41.4653,   
         lng: -87.03851,
