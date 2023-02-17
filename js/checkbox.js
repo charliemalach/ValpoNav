@@ -222,7 +222,7 @@ deselectAllForm4.addEventListener("change", function() {
 //this is the fifth form (parking lots)
 var selectAllForm5 = document.getElementById("selectAllForm5");
 var deselectAllForm5 = document.getElementById("deselectAllForm5");
-var form4Checkboxes = document.querySelectorAll(".form5Checkbox");
+var form5Checkboxes = document.querySelectorAll(".form5Checkbox");
 
 selectAllForm5.addEventListener("change", function() {
     if (this.checked) {
@@ -237,14 +237,14 @@ selectAllForm5.addEventListener("change", function() {
     }
 });
 
-deselectAllForm4.addEventListener("change", function() {
+deselectAllForm5.addEventListener("change", function() {
     if (this.checked) {
-        selectAllForm4.checked = false;
-        form4Checkboxes.forEach(function(checkbox) {
+        selectAllForm5.checked = false;
+        form5Checkboxes.forEach(function(checkbox) {
             checkbox.checked = false;
         });
         // trigger change event on checkboxes to update markers
-        form4Checkboxes.forEach(function(checkbox) {
+        form5Checkboxes.forEach(function(checkbox) {
             checkbox.dispatchEvent(new Event('change'));
         });
     }
