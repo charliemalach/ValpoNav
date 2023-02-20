@@ -40,6 +40,22 @@ var off_campus_buildings = [{
         link: './offcampus.html?buildingIndex=',
         desc: "Panera Bread is an American chain store of bakery-café fast casual restaurants with over 2,000 locations, all of which are in the United States and Canada. Its headquarters are in Sunset Hills, Missouri. The company operates as Saint Louis Bread Company in the Greater St. Louis area, where it has over 100 locations.[6] Offerings include bakery items, pasta, salads, sandwiches, soups, and specialty drinks. As of 2020, the menu also includes flatbread pizzas.<br><br> Valparaiso University is excited to extend our OneCard program to off campus merchants.This enables us to partner with local businesses to allow students, faculty and staff to use their Beacon Bucks for payment at local business around the Valpo area! For more information, visit <a href=https://www.valpo.edu/it/onecard/beacon-bucks/off-campus-merchants/ style= color:blue target=_blank> here</a> ",
         image: 'https://image.cnbcfm.com/api/v1/image/106972691-1636466150088-gettyimages-1280324270-1006_32_fl200924107.jpeg?v=1661775251'
+    },
+    {
+        name: 'Qdoba',
+        lat: 41.46811, 
+        lng: -87.02787,
+        link: './offcampus.html?buildingIndex=',
+        desc: "Qdoba is a chain of fast casual restaurants in the United States and Canada serving Mexican-style cuisine. After spending 15 years as a wholly owned subsidiary of Jack in the Box, the company was sold to a consortium of funds led by Apollo Global Management in March 2018. <br><br> Valparaiso University is excited to extend our OneCard program to off campus merchants.This enables us to partner with local businesses to allow students, faculty and staff to use their Beacon Bucks for payment at local business around the Valpo area! For more information, visit <a href=https://www.valpo.edu/it/onecard/beacon-bucks/off-campus-merchants/ style= color:blue target=_blank> here</a> ",
+        image: 'https://content-service.sodexomyway.com/media/qdoba%20%281%29_tcm1108-132029.jpg?url=https://lmudining.sodexomyway.com/'
+    },
+    {
+        name: 'Quiznos',
+        lat: 41.46763,  
+        lng: -87.02895,
+        link: './offcampus.html?buildingIndex=',
+        desc: "Quiznos is known for toasted, build-your-own subs, this counter-serve chain also sells soups, salads & more. <br><br> Valparaiso University is excited to extend our OneCard program to off campus merchants.This enables us to partner with local businesses to allow students, faculty and staff to use their Beacon Bucks for payment at local business around the Valpo area! For more information, visit <a href=https://www.valpo.edu/it/onecard/beacon-bucks/off-campus-merchants/ style= color:blue target=_blank> here</a> ",
+        image: 'https://cdn.winsightmedia.com/platform/files/public/2018-06/background/Quiznos-exterior_1528901830.jpg/'
     }
 ];
 
