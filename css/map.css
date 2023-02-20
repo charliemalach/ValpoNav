@@ -24,17 +24,19 @@
         }
         
         #map {
-            height: 93%;
-            width: 98.5%;
+            height: 91.5%;
+            width: 100%;
             display: flex;
             margin-left: auto;
             margin-right: auto;
-            border: 2px solid black;
             padding: 260px;
             z-index: -1;
             position: absolute;
+            left: 0px;
+            right: 0px;
             /* this will make the navbar appear above the map */
-            top: 65px;
+            top: 60px;
+            bottom: 100px;
         }
         
         .banner {

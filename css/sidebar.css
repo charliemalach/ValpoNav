@@ -1,6 +1,6 @@
 .sidebar {
-    height: 100%;
-    top: 50px;
+    height: 91.5%;
+    top: 65px;
     width: 0;
     position: absolute;
     z-index: 0;
@@ -8,7 +8,7 @@
     background-color: #ffcc00;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    top: 60px;
     display: flex;
     flex-direction: column;
 }

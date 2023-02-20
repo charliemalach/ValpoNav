@@ -6,12 +6,12 @@ var yellowIcon = new L.Icon({
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
-    });
+});
 
 var markers = [];
 for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
-    var marker = L.marker([building.lat, building.lng],{ icon: yellowIcon }).addTo(map);
+    var marker = L.marker([building.lat, building.lng], { icon: yellowIcon }).addTo(map);
     marker.bindPopup(`<b>${building.name}</b><br>
     <a href="oncampus.html?buildingIndex=${buildings.indexOf(building)}" target="_blank">More Info</a>`);
     marker.addEventListener("click", function(e) {
@@ -185,7 +185,7 @@ var blueIcon = new L.Icon({
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
-    });
+});
 
 var parkingLotmarkers = [];
 for (var i = 0; i < parking_lots.length; i++) {
@@ -199,167 +199,167 @@ for (var i = 0; i < parking_lots.length; i++) {
     parkingLotmarkers.push(marker);
 }
 
-    function showParkingLotsMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < parking_lots.length; i++) {
-            if (parking_lots[i].name === name) {
-                var latLng = [parking_lots[i].lat, parking_lots[i].lng];
-                // center the map to the location of that building
-                map.setView(latLng, 17);
-                map.flyTo(latLng);
-                parkingLotmarkers[i].openPopup();
-                parkingLotmarkers[i].setOpacity(1);
-                break;
-            }
+function showParkingLotsMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < parking_lots.length; i++) {
+        if (parking_lots[i].name === name) {
+            var latLng = [parking_lots[i].lat, parking_lots[i].lng];
+            // center the map to the location of that building
+            map.setView(latLng, 17);
+            map.flyTo(latLng);
+            parkingLotmarkers[i].openPopup();
+            parkingLotmarkers[i].setOpacity(1);
+            break;
         }
     }
-    
-    function hideParkingLotMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < parking_lots.length; i++) {
-            if (parking_lots[i].name === name) {
-                // center the map to the location of that building
-                parkingLotmarkers[i].setOpacity(0);
-                break;
-            }
-        }
-    }
-    
-    function showsParkingLotMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < parking_lots.length; i++) {
-            if (parking_lots[i].name === name) {
-                // center the map to the location of that building
-                parkingLotmarkers[i].setOpacity(1);
-                break;
-            }
-        }
-    }
+}
 
-    //search var
-    var transparentIcon = new L.Icon({
-        iconUrl: 'https://example.com/transparent-marker-icon.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-        iconSize: [0,0],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
+function hideParkingLotMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < parking_lots.length; i++) {
+        if (parking_lots[i].name === name) {
+            // center the map to the location of that building
+            parkingLotmarkers[i].setOpacity(0);
+            break;
+        }
+    }
+}
+
+function showsParkingLotMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < parking_lots.length; i++) {
+        if (parking_lots[i].name === name) {
+            // center the map to the location of that building
+            parkingLotmarkers[i].setOpacity(1);
+            break;
+        }
+    }
+}
+
+//search var
+var transparentIcon = new L.Icon({
+    iconUrl: 'https://example.com/transparent-marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [0, 0],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
 
 //Health & Safety markers 
-    var violetIcon = new L.Icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
+var violetIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
 
-    var health_safety_markers = [];
-    for (var i = 0; i < health_safety_buildings.length; i++) {
-        var health_safe = health_safety_buildings[i];
-        var marker = L.marker([health_safe.lat, health_safe.lng], { icon: violetIcon }).addTo(map);
-        marker.bindPopup(`<b>${health_safe.name}</b><br>
+var health_safety_markers = [];
+for (var i = 0; i < health_safety_buildings.length; i++) {
+    var health_safe = health_safety_buildings[i];
+    var marker = L.marker([health_safe.lat, health_safe.lng], { icon: violetIcon }).addTo(map);
+    marker.bindPopup(`<b>${health_safe.name}</b><br>
         <a href="healthsafety.html?buildingIndex=${health_safety_buildings.indexOf(health_safe)}" target="_blank">More Info</a>`);
-        marker.addEventListener("click", function(e) {
-            map.panTo(this.getLatLng());
-        });
-        health_safety_markers.push(marker);
-    }
-
-    function showHealthSafetyMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < health_safety_buildings.length; i++) {
-            if (health_safety_buildings[i].name === name) {
-                var latLng = [health_safety_buildings[i].lat, health_safety_buildings[i].lng];
-                // center the map to the location of that building
-                map.setView(latLng, 17);
-                map.flyTo(latLng);
-                health_safety_markers[i].openPopup();
-                health_safety_markers[i].setOpacity(1);
-                break;
-            }
-        }
-    }
-    
-    function hideHealthSafetyMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < health_safety_buildings.length; i++) {
-            if (health_safety_buildings[i].name === name) {
-                // center the map to the location of that building
-                health_safety_markers[i].setOpacity(0);
-                break;
-            }
-        }
-    }
-    
-    function showsHealthSafetyMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < health_safety_buildings.length; i++) {
-            if (health_safety_buildings[i].name === name) {
-                // center the map to the location of that building
-                health_safety_markers[i].setOpacity(1);
-                break;
-            }
-        }
-    }
-
-    //recreational markers 
-    var BlackIcon = new L.Icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
+    marker.addEventListener("click", function(e) {
+        map.panTo(this.getLatLng());
     });
+    health_safety_markers.push(marker);
+}
 
-    var recreational_markers = [];
-    for (var i = 0; i < recreational_buildings.length; i++) {
-        var recreational = recreational_buildings[i];
-        var marker = L.marker([recreational.lat, recreational.lng], { icon: BlackIcon }).addTo(map);
-        marker.bindPopup(`<b>${recreational.name}</b><br>
+function showHealthSafetyMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < health_safety_buildings.length; i++) {
+        if (health_safety_buildings[i].name === name) {
+            var latLng = [health_safety_buildings[i].lat, health_safety_buildings[i].lng];
+            // center the map to the location of that building
+            map.setView(latLng, 17);
+            map.flyTo(latLng);
+            health_safety_markers[i].openPopup();
+            health_safety_markers[i].setOpacity(1);
+            break;
+        }
+    }
+}
+
+function hideHealthSafetyMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < health_safety_buildings.length; i++) {
+        if (health_safety_buildings[i].name === name) {
+            // center the map to the location of that building
+            health_safety_markers[i].setOpacity(0);
+            break;
+        }
+    }
+}
+
+function showsHealthSafetyMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < health_safety_buildings.length; i++) {
+        if (health_safety_buildings[i].name === name) {
+            // center the map to the location of that building
+            health_safety_markers[i].setOpacity(1);
+            break;
+        }
+    }
+}
+
+//recreational markers 
+var OrangeIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+var recreational_markers = [];
+for (var i = 0; i < recreational_buildings.length; i++) {
+    var recreational = recreational_buildings[i];
+    var marker = L.marker([recreational.lat, recreational.lng], { icon: OrangeIcon }).addTo(map);
+    marker.bindPopup(`<b>${recreational.name}</b><br>
         <a href="recreational.html?buildingIndex=${recreational_buildings.indexOf(recreational)}" target="_blank">More Info</a>`);
-        marker.addEventListener("click", function(e) {
-            map.panTo(this.getLatLng());
-        });
-        recreational_markers.push(marker);
-    }
+    marker.addEventListener("click", function(e) {
+        map.panTo(this.getLatLng());
+    });
+    recreational_markers.push(marker);
+}
 
-    function showRecreationalMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < recreational_buildings.length; i++) {
-            if (recreational_buildings[i].name === name) {
-                var latLng = [recreational_buildings[i].lat, recreational_buildings[i].lng];
-                // center the map to the location of that building
-                map.setView(latLng, 17);
-                map.flyTo(latLng);
-                recreational_markers[i].openPopup();
-                recreational_markers[i].setOpacity(1);
-                break;
-            }
+function showRecreationalMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < recreational_buildings.length; i++) {
+        if (recreational_buildings[i].name === name) {
+            var latLng = [recreational_buildings[i].lat, recreational_buildings[i].lng];
+            // center the map to the location of that building
+            map.setView(latLng, 17);
+            map.flyTo(latLng);
+            recreational_markers[i].openPopup();
+            recreational_markers[i].setOpacity(1);
+            break;
         }
     }
-    
-    function hideRecreationalMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < recreational_buildings.length; i++) {
-            if (recreational_buildings[i].name === name) {
-                // center the map to the location of that building
-                recreational_markers[i].setOpacity(0);
-                break;
-            }
+}
+
+function hideRecreationalMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < recreational_buildings.length; i++) {
+        if (recreational_buildings[i].name === name) {
+            // center the map to the location of that building
+            recreational_markers[i].setOpacity(0);
+            break;
         }
     }
-    
-    function showsRecreationalMarker(name) {
-        // loop through the buildings array to find a match for the provided building name
-        for (var i = 0; i < recreational_buildings.length; i++) {
-            if (recreational_buildings[i].name === name) {
-                // center the map to the location of that building
-                recreational_markers[i].setOpacity(1);
-                break;
-            }
+}
+
+function showsRecreationalMarker(name) {
+    // loop through the buildings array to find a match for the provided building name
+    for (var i = 0; i < recreational_buildings.length; i++) {
+        if (recreational_buildings[i].name === name) {
+            // center the map to the location of that building
+            recreational_markers[i].setOpacity(1);
+            break;
         }
     }
+}
