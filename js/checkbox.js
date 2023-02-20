@@ -90,6 +90,24 @@ checkboxes.forEach(function(checkbox) {
     });
 });
 
+// Listen for changes on the checkboxes
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        // Retrieve the selected buildings
+        var selectedRecreational = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+        // Loop through the buildings array and add a marker for each selected building
+        recreational_buildings.forEach(function(recreational) {
+            if (selectedRecreational.includes(recreational.name)) {
+                showsRecreationalMarker(recreational.name);
+            } else {
+                hideRecreationalMarker(recreational.name);
+                map.closePopup();
+            }
+        });
+    });
+});
+
 
 
 
@@ -245,6 +263,37 @@ deselectAllForm5.addEventListener("change", function() {
         });
         // trigger change event on checkboxes to update markers
         form5Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+//this is the sixth form (recreational)
+var selectAllForm6 = document.getElementById("selectAllForm6");
+var deselectAllForm6 = document.getElementById("deselectAllForm6");
+var form6Checkboxes = document.querySelectorAll(".form6Checkbox");
+
+selectAllForm6.addEventListener("change", function() {
+    if (this.checked) {
+        deselectAllForm6.checked = false;
+        form6Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+        // trigger change event on checkboxes to update markers
+        form6Checkboxes.forEach(function(checkbox) {
+            checkbox.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
+deselectAllForm6.addEventListener("change", function() {
+    if (this.checked) {
+        selectAllForm6.checked = false;
+        form6Checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        // trigger change event on checkboxes to update markers
+        form6Checkboxes.forEach(function(checkbox) {
             checkbox.dispatchEvent(new Event('change'));
         });
     }

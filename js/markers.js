@@ -304,3 +304,62 @@ for (var i = 0; i < parking_lots.length; i++) {
             }
         }
     }
+
+    //recreational markers 
+    var BlackIcon = new L.Icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
+    var recreational_markers = [];
+    for (var i = 0; i < recreational_buildings.length; i++) {
+        var recreational = recreational_buildings[i];
+        var marker = L.marker([recreational.lat, recreational.lng], { icon: BlackIcon }).addTo(map);
+        marker.bindPopup(`<b>${recreational.name}</b><br>
+        <a href="recreational.html?buildingIndex=${recreational_buildings.indexOf(recreational)}" target="_blank">More Info</a>`);
+        marker.addEventListener("click", function(e) {
+            map.panTo(this.getLatLng());
+        });
+        recreational_markers.push(marker);
+    }
+
+    function showRecreationalMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < recreational_buildings.length; i++) {
+            if (recreational_buildings[i].name === name) {
+                var latLng = [recreational_buildings[i].lat, recreational_buildings[i].lng];
+                // center the map to the location of that building
+                map.setView(latLng, 17);
+                map.flyTo(latLng);
+                recreational_markers[i].openPopup();
+                recreational_markers[i].setOpacity(1);
+                break;
+            }
+        }
+    }
+    
+    function hideRecreationalMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < recreational_buildings.length; i++) {
+            if (recreational_buildings[i].name === name) {
+                // center the map to the location of that building
+                recreational_markers[i].setOpacity(0);
+                break;
+            }
+        }
+    }
+    
+    function showsRecreationalMarker(name) {
+        // loop through the buildings array to find a match for the provided building name
+        for (var i = 0; i < recreational_buildings.length; i++) {
+            if (recreational_buildings[i].name === name) {
+                // center the map to the location of that building
+                recreational_markers[i].setOpacity(1);
+                break;
+            }
+        }
+    }

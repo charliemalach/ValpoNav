@@ -446,6 +446,92 @@
 
         <br>
 
+
+        <div id="category-menu">
+            <h3 class="category-title">
+
+                <span onclick="toggleCategory(event)" style="text-align: center;">Recreational</span>
+                <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
+            </h3>
+            <div class="category-content">
+
+                <div class="checkbox-container">
+
+                    <form id="form6">
+
+                        <div class="row">
+
+                            <div class="column1">
+                                <a href="#!"><b>Select All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="selectAllForm6" value="selectAllForm6">
+                            </div>
+
+                            <div class="column1">
+                                <a href="#!"><b>Deselect All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm6" value="deselectAllForm6">
+                            </div>
+
+                            <div class="column1">
+                                <label for="Athletics-Recreation Center">
+                            <a href="#!" onclick="showRecreationalMarker('Athletics-Recreation Center');">ARC - Athletics-Recreation Center</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form6Checkbox" id="Athletics-Recreation Center" value="Athletics-Recreation Center" checked>
+                            </div>
+
+                            <div class="column1">
+                                <label for="Brown Field">
+                            <a href="#!" onclick="showRecreationalMarker('Brown Field'); ">BF - Brown Field</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form6Checkbox" id="Brown Field" value="Brown Field" checked>
+                            </div>
+
+                            <div class="column1">
+                                <label for="Fitness Center">
+                            <a href="#!" onclick="showRecreationalMarker('Fitness Center'); ">FC - Fitness Center</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form6Checkbox" id="Fitness Center" value="Fitness Center" checked>
+                            </div>
+
+                            <div class="column1">
+                                <label for="Kroencke Hall">
+                            <a href="#!" onclick="showRecreationalMarker('Kroencke Hall'); ">KRH - Kroencke Hall</a>
+                            </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form6Checkbox" id="Kroencke Hall" value="Kroencke Hall" checked>
+                            </div>
+
+
+
+                        </div>
+                        <!-- ends 'row' div -->
+                    </form>
+                </div>
+                <!-- ends 'checkbox-container' div -->
+            </div>
+            <!-- ends 'category-content' -->
+        </div>
+        <!-- ends 'category menu' div -->
+
+        <br>
+
+
         <div id="category-menu">
             <h3 class="category-title">
                 <span onclick="toggleCategory(event)" style="text-align: center;">Residential Halls</span>
@@ -609,25 +695,7 @@
                                 <input type="checkbox" id="deselectAllForm4" value="deselectAllForm4">
                             </div>
 
-                            <div class="column1">
-                                <label for="Athletics-Recreation Center">
-                            <a href="#!" onclick="showHealthSafetyMarker('Athletics-Recreation Center'); ">ARC - Athletics-Recreation Center</a>
-                            </label>
-                            </div>
-
-                            <div class="column2">
-                                <input type="checkbox" class="form4Checkbox" id="Athletics-Recreation Center" value="Athletics-Recreation Center" checked>
-                            </div>
-
-                            <div class="column1">
-                                <label for="Brown Field">
-                            <a href="#!" onclick="showHealthSafetyMarker('Brown Field'); ">BF - Brown Field</a>
-                            </label>
-                            </div>
-
-                            <div class="column2">
-                                <input type="checkbox" class="form4Checkbox" id="Brown Field" value="Brown Field" checked>
-                            </div>
+                            
 
                             <div class="column1">
                                 <label for="Counceling Services">
@@ -637,26 +705,6 @@
 
                             <div class="column2">
                                 <input type="checkbox" class="form4Checkbox" id="Counceling Services" value="Counceling Services" checked>
-                            </div>
-
-                            <div class="column1">
-                                <label for="Fitness Center">
-                            <a href="#!" onclick="showHealthSafetyMarker('Fitness Center'); ">FC - Fitness Center</a>
-                            </label>
-                            </div>
-
-                            <div class="column2">
-                                <input type="checkbox" class="form4Checkbox" id="Fitness Center" value="Fitness Center" checked>
-                            </div>
-
-                            <div class="column1">
-                                <label for="Kroencke Hall">
-                            <a href="#!" onclick="showHealthSafetyMarker('Kroencke Hall'); ">KRH - Kroencke Hall</a>
-                            </label>
-                            </div>
-
-                            <div class="column2">
-                                <input type="checkbox" class="form4Checkbox" id="Kroencke Hall" value="Kroencke Hall" checked>
                             </div>
 
                             <div class="column1">
@@ -910,6 +958,7 @@
                 <script src="js/residential-array.js"></script>
                 <script src="js/parking-array.js"></script>
                 <script src="js/health-safety.js"></script>
+                <script src="js/recreational-buildings.js"></script>
                 <script src="js/buildings.js"></script>
 
                 <script src="js/markers.js"></script>
