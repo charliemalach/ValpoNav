@@ -53,18 +53,20 @@
 
 
     <script src="js/residential-array.js"></script>
+    <script src="js/buildings.js"></script>
+    <script src="js/mapSearch.js"></script>
+
     <script>
         // Get the selected building index from the URL
         var index = parseInt(window.location.search.substring(1).split("=")[1]);
         
         // Display the building information
         console.log(newArr);
-        document.getElementById("building-name").innerHTML = residential_halls[index].name;
-        document.getElementById("building-desc").innerHTML = residential_halls[index].desc;
-        document.getElementById("building-image").src = residential_halls[index].image;
-        document.getElementById("building-link").innerHTML = residential_halls[index].link;
-        document.getElementById("building-link").href = residential_halls[index].link;
-
+        document.getElementById("building-name").innerHTML = newArr[index].name;
+        document.getElementById("building-desc").innerHTML = newArr[index].desc;
+        document.getElementById("building-image").src = newArr[index].image;
+        document.getElementById("building-link").innerHTML = newArr[index].link;
+        document.getElementById("building-link").href = newArr[index].link;
 
 
     </script>
