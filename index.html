@@ -65,7 +65,7 @@
         <!-- Space from the top -->
         <br>
 
-        <h2 style="text-align: center">Valparaiso Buildings</h2>
+        <h2 style="text-align: center">Navigation Menu</h2>
 
         <br>
         <!-- separates 'on-campus' and 'off-campus' -->
@@ -334,8 +334,6 @@
 
         <br>
 
-
-
         <div id="category-menu">
             <h3 class="category-title">
 
@@ -519,8 +517,6 @@
                                 <input type="checkbox" class="form6Checkbox" id="Kroencke Hall" value="Kroencke Hall" checked>
                             </div>
 
-
-
                         </div>
                         <!-- ends 'row' div -->
                     </form>
@@ -697,8 +693,6 @@
                                 <input type="checkbox" id="deselectAllForm4" value="deselectAllForm4">
                             </div>
 
-
-
                             <div class="column1">
                                 <label for="Counceling Services">
                             <a href="#!" onclick="showHealthSafetyMarker('Counceling Services'); ">Counceling Services</a>
@@ -728,11 +722,6 @@
                             <div class="column2">
                                 <input type="checkbox" class="form4Checkbox" id="Valparaiso University Police Department" value="Valparaiso University Police Department" checked>
                             </div>
-
-
-
-
-
 
                         </div>
                         <!-- ends 'row' div -->
@@ -906,20 +895,76 @@
                                 <input type="checkbox" class="form5Checkbox" id="Lot 30" value="Lot 30" checked>
                             </div>
 
+                        </div>
+                        <!-- ends 'row' div -->
+                    </form>
+                </div>
+                <!-- ends 'checkbox-container' div -->
+            </div>
+        </div>
+        <!-- ends 'category-content' -->
 
+        <br>
 
-                            <!-- 
+        <div id="category-menu">
+            <h3 class="category-title">
+                <span onclick="toggleCategory(event)" style="text-align: center;">Health & Safety</span>
+                <i class="fas fa-angle-down" onclick="toggleCategory(event)"></i>
+            </h3>
+
+            <div class="category-content">
+                <div class="checkbox-container">
+                    <!-- Campus Buildings Checkboxes -->
+
+                    <form id="form4">
+
+                        <div class="row">
 
                             <div class="column1">
-                                <label for="Lot ">
-                            <a href="#!" onclick="showParkingLotsMarker('Lot ');">Lot </a>
-                            </label>
+                                <a href="#!"><b>Select All</b></a>
                             </div>
 
                             <div class="column2">
-                                <input type="checkbox" class="form5Checkbox" id="Lot " value="Lot " checked>
-                            </div>  -->
+                                <input type="checkbox" id="selectAllForm4" value="selectAllForm4">
+                            </div>
 
+                            <div class="column1">
+                                <a href="#!"><b>Deselect All</b></a>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" id="deselectAllForm4" value="deselectAllForm4">
+                            </div>
+
+                            <div class="column1">
+                                <label for="Counceling Services">
+                                <a href="#!" onclick="showHealthSafetyMarker('Counceling Services'); ">Counceling Services</a>
+                                </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form4Checkbox" id="Counceling Services" value="Counceling Services" checked>
+                            </div>
+
+                            <div class="column1">
+                                <label for="Student Health Center">
+                                <a href="#!" onclick="showHealthSafetyMarker('Student Health Center'); ">HC - Student Health Center</a>
+                                </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form4Checkbox" id="Student Health Center" value="Student Health Center" checked>
+                            </div>
+
+                            <div class="column1">
+                                <label for="Valparaiso University Police Department">
+                                <a href="#!" onclick="showHealthSafetyMarker('Valparaiso University Police Department'); ">VUP - Valparaiso University Police Department</a>
+                                </label>
+                            </div>
+
+                            <div class="column2">
+                                <input type="checkbox" class="form4Checkbox" id="Valparaiso University Police Department" value="Valparaiso University Police Department" checked>
+                            </div>
 
                         </div>
                         <!-- ends 'row' div -->
@@ -928,21 +973,21 @@
                 <!-- ends 'checkbox-container' div -->
             </div>
             <!-- ends 'category-content' -->
-            <br>
-            <h2 style="text-align: center">Resources</h2>
-
-            <div id="category-menu">
-                <a href="about.html" style="text-align: center;"><span>About</span></a><br>
-                <a href="features.html"><span style="text-align: center;">Features</span></a><br>
-                <a href="faq.html"><span style="text-align: center;">FAQ</span></a><br>
-                <a href="help.html"><span style="text-align: center;" target="_blank">Help</span></a><br><br>
-            </div>
-
-            </h3>
-
-            <br>
         </div>
         <!-- ends 'category menu' div -->
+
+        <br>
+
+        <h2 style="text-align: center">Navigation Help</h2>
+
+        <h3 class="category-title">
+            <br>
+            <a href="about.html" style="text-align: center; font: inherit;"><span>About</span></a>
+            <a href="features.html" style="text-align: center; font: inherit;"><span>Features</span></a>
+            <a href="faq.html" style="text-align: center; font: inherit;"><span>FAQ</span></a>
+            <a href="help.html" style="text-align: center; font: inherit;"><span>Help</span></a>
+        </h3>
+
 
 
     </div>

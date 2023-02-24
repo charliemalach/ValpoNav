@@ -24,7 +24,7 @@
         }
         
         #map {
-            height: 91.5%;
+            height: 95%;
             width: 100%;
             display: flex;
             margin-left: auto;
@@ -36,7 +36,6 @@
             right: 0px;
             /* this will make the navbar appear above the map */
             top: 60px;
-            bottom: 100px;
         }
         
         .banner {
