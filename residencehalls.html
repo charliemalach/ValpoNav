@@ -58,7 +58,6 @@
         var index = parseInt(window.location.search.substring(1).split("=")[1]);
         
         // Display the building information
-        console.log(newArr);
         document.getElementById("building-name").innerHTML = residential_halls[index].name;
         document.getElementById("building-desc").innerHTML = residential_halls[index].desc;
         document.getElementById("building-image").src = residential_halls[index].image;
