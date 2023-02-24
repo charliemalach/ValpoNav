@@ -1,3 +1,4 @@
+
 //on campus markers
 var yellowIcon = new L.Icon({
     iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
@@ -21,6 +22,7 @@ for (var i = 0; i < buildings.length; i++) {
 }
 
 function showBuildingMarker(name) {
+    closeNav();
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < buildings.length; i++) {
         if (buildings[i].name === name) {
@@ -81,6 +83,7 @@ for (var i = 0; i < off_campus_buildings.length; i++) {
 
 function showOffCampusMarker(name) {
     // loop through the buildings array to find a match for the provided building name
+    closeNav();
     for (var i = 0; i < off_campus_buildings.length; i++) {
         if (off_campus_buildings[i].name === name) {
             var latLng = [off_campus_buildings[i].lat, off_campus_buildings[i].lng];
@@ -89,6 +92,7 @@ function showOffCampusMarker(name) {
             map.flyTo(latLng);
             offCampusmarkers[i].openPopup();
             offCampusmarkers[i].setOpacity(1);
+            
             break;
         }
     }
@@ -140,6 +144,8 @@ for (var i = 0; i < residential_halls.length; i++) {
 }
 
 function showResHallsMarker(name) {
+    closeNav();
+
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < residential_halls.length; i++) {
         if (residential_halls[i].name === name) {
@@ -200,6 +206,8 @@ for (var i = 0; i < parking_lots.length; i++) {
 }
 
 function showParkingLotsMarker(name) {
+    closeNav();
+
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < parking_lots.length; i++) {
         if (parking_lots[i].name === name) {
@@ -269,6 +277,8 @@ for (var i = 0; i < health_safety_buildings.length; i++) {
 }
 
 function showHealthSafetyMarker(name) {
+    closeNav();
+
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < health_safety_buildings.length; i++) {
         if (health_safety_buildings[i].name === name) {
@@ -328,6 +338,8 @@ for (var i = 0; i < recreational_buildings.length; i++) {
 }
 
 function showRecreationalMarker(name) {
+    closeNav();
+
     // loop through the buildings array to find a match for the provided building name
     for (var i = 0; i < recreational_buildings.length; i++) {
         if (recreational_buildings[i].name === name) {
