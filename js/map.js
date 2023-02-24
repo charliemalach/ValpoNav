@@ -1,15 +1,9 @@
-//initialize the map
+var map = L.map('map', { zoomControl: false }).setView([41.4637, -87.0448], 16);
 
-// Creating map options
-var mapOptions = {
-    zoomControl: false
+streetLayer.addTo(map);
+
+L.control.navbar = function(options) {
+    return new L.Control.NavBar(options);
 }
 
-var map = L.map('map', mapOptions).setView([41.4637, -87.0448], 16);
-
-new L.Control.NavBar().addTo(map);
-
-// Add a tile layer to the map
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-
-}).addTo(map);
+L.control.navbar().addTo(map);

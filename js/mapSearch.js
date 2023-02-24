@@ -31,7 +31,7 @@ function toggleNav() {
         nav.style.width = "0";
         other.style.marginLeft = "0";
     } else {
-        nav.style.width = -webkit-fill-available;
+        nav.style.width = -webkit - fill - available;
         // other.style.marginLeft = "400px";
     }
 }

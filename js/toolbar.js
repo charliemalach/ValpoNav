@@ -4,17 +4,29 @@ L.Control.NavBar = L.Control.extend({
         zoomInTitle: "Zoom in",
         zoomOutTitle: "Zoom out",
         geolocationTitle: "Go to current location",
-        homeTitle: "Go to home map view"
+        homeTitle: "Go to home map view",
+        streetLayerTitle: "Map View",
+        satelliteLayerTitle: "Satellite View"
     },
 
     onAdd: function(map) {
         var controlName = 'leaflet-control-navbar',
             container = L.DomUtil.create('div', controlName + ' leaflet-bar');
 
-        this._zoomInButton = this._createButton(this.options.zoomInTitle, controlName + '-zoom-in', container, this._zoomIn);
-        this._zoomOutButton = this._createButton(this.options.zoomOutTitle, controlName + '-zoom-out', container, this._zoomOut);
-        this._geolocationButton = this._createButton(this.options.geolocationTitle, controlName + '-geolocation', container, this._goGeolocation);
-        this._homeButton = this._createButton(this.options.homeTitle, controlName + '-home', container, this._goHome);
+        this._zoomInButton = this._createButton(this.options.zoomInTitle, controlName + '-zoom-in', container, this._zoomIn, 'fa fa-plus');
+        this._zoomOutButton = this._createButton(this.options.zoomOutTitle, controlName + '-zoom-out', container, this._zoomOut, 'fa fa-minus');
+        this._homeButton = this._createButton(this.options.homeTitle, controlName + '-home', container, this._goHome, 'fa fa-home');
+        this._streetLayerButton = this._createButton(this.options.streetLayerTitle, controlName + '-street-layer', container, function() {
+            map.removeLayer(satelliteLayer);
+            streetLayer.addTo(map);
+        }, 'fa fa-map');
+        this._satelliteLayerButton = this._createButton(this.options.satelliteLayerTitle, controlName + '-satellite-layer', container, function() {
+            map.removeLayer(streetLayer);
+            satelliteLayer.addTo(map);
+        }, 'fa fa-globe');
+        this._geolocationButton = this._createButton(this.options.geolocationTitle, controlName + '-geolocation', container, this._goGeolocation, 'fa fa-map-marker');
+
+
 
         this._viewHistory = [{ center: map.getCenter(), zoom: map.getZoom() }];
         this._curIndx = 0;
@@ -74,45 +86,33 @@ L.Control.NavBar = L.Control.extend({
         link.href = '#';
         link.title = title;
 
-        L.DomEvent
-            .on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
-            .on(link, 'click', L.DomEvent.stop)
+        var icon = L.DomUtil.create('i', 'icon', link);
+        return L.DomEvent.on(link, 'click', L.DomEvent.stopPropagation)
+            .on(link, 'click', L.DomEvent.preventDefault)
             .on(link, 'click', fn, this)
-            .on(link, 'click', this._refocusOnMap, this);
-
-        return link;
+            .on(link, 'dblclick', L.DomEvent.stopPropagation)
+            .on(link, 'dblclick', L.DomEvent.preventDefault)
+            .on(link, 'dblclick', fn, this);
     },
 
-    _updateHistory: function(e) {
-        var newView = { center: this._map.getCenter(), zoom: this._map.getZoom() };
-        var insertIndex = this._curIndx + 1;
-        this._viewHistory.splice(insertIndex, this._viewHistory.length - insertIndex, newView);
-        this._curIndx = insertIndex;
-    },
 
-    _createButton: function(title, className, container, fn) {
-        var link = L.DomUtil.create('a', className, container);
-        link.href = '#';
-        link.title = title;
-
-        var icon = L.DomUtil.create('i', 'fas fa-fw', link);
-
-        if (className === 'leaflet-control-navbar-zoom-in') {
-            icon.classList.add('fa-plus');
-        } else if (className === 'leaflet-control-navbar-zoom-out') {
-            icon.classList.add('fa-minus');
-        } else if (className === 'leaflet-control-navbar-geolocation') {
-            icon.classList.add('fa-location-arrow');
-        } else if (className === 'leaflet-control-navbar-home') {
-            icon.classList.add('fa-home');
+    _updateHistory: function() {
+        var view = { center: this._map.getCenter(), zoom: this._map.getZoom() };
+        if (view.center.distanceTo(this._viewHistory[this._curIndx].center) > 100 ||
+            Math.abs(view.zoom - this._viewHistory[this._curIndx].zoom) > 1) {
+            this._viewHistory.splice(this._curIndx + 1);
+            this._viewHistory.push(view);
+            this._curIndx++;
         }
-
-        L.DomEvent
-            .on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
-            .on(link, 'click', L.DomEvent.stop)
-            .on(link, 'click', fn, this)
-            .on(link, 'click', this._refocusOnMap, this);
-
-        return link;
     }
+});
+
+var streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+    maxZoom: 19
+});
+
+var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '© <a href="https://www.arcgis.com/">Esri</a>',
+    maxZoom: 19
 });
