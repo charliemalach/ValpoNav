@@ -13,18 +13,29 @@ L.Control.NavBar = L.Control.extend({
         var controlName = 'leaflet-control-navbar',
             container = L.DomUtil.create('div', controlName + ' leaflet-bar');
 
+        var currentLayer = streetLayer;
+
+
         this._zoomInButton = this._createButton(this.options.zoomInTitle, controlName + '-zoom-in', container, this._zoomIn, 'fa fa-plus');
         this._zoomOutButton = this._createButton(this.options.zoomOutTitle, controlName + '-zoom-out', container, this._zoomOut, 'fa fa-minus');
         this._homeButton = this._createButton(this.options.homeTitle, controlName + '-home', container, this._goHome, 'fa fa-home');
         this._streetLayerButton = this._createButton(this.options.streetLayerTitle, controlName + '-street-layer', container, function() {
-            map.removeLayer(satelliteLayer);
-            streetLayer.addTo(map);
+            if (currentLayer !== streetLayer) {
+                map.removeLayer(satelliteLayer);
+                streetLayer.addTo(map);
+                currentLayer = streetLayer;
+            }
         }, 'fa fa-map');
         this._satelliteLayerButton = this._createButton(this.options.satelliteLayerTitle, controlName + '-satellite-layer', container, function() {
-            map.removeLayer(streetLayer);
-            satelliteLayer.addTo(map);
+            if (currentLayer !== satelliteLayer) {
+                map.removeLayer(streetLayer);
+                satelliteLayer.addTo(map);
+                currentLayer = satelliteLayer;
+            }
         }, 'fa fa-globe');
-        this._geolocationButton = this._createButton(this.options.geolocationTitle, controlName + '-geolocation', container, this._goGeolocation, 'fa fa-map-marker');
+
+        this._geolocationButton = this._createButton(this.options.geolocationTitle, controlName + '-geolocation', container, this._goGeolocation, 'fa fa-location-arrow');
+
 
 
 
@@ -81,12 +92,12 @@ L.Control.NavBar = L.Control.extend({
         this._map.setView(view.center, view.zoom);
     },
 
-    _createButton: function(title, className, container, fn) {
+    _createButton: function(title, className, container, fn, iconClass) {
         var link = L.DomUtil.create('a', className, container);
         link.href = '#';
         link.title = title;
 
-        var icon = L.DomUtil.create('i', 'icon', link);
+        var icon = L.DomUtil.create('i', iconClass, link);
         return L.DomEvent.on(link, 'click', L.DomEvent.stopPropagation)
             .on(link, 'click', L.DomEvent.preventDefault)
             .on(link, 'click', fn, this)
@@ -94,6 +105,7 @@ L.Control.NavBar = L.Control.extend({
             .on(link, 'dblclick', L.DomEvent.preventDefault)
             .on(link, 'dblclick', fn, this);
     },
+
 
 
     _updateHistory: function() {
