@@ -9,20 +9,31 @@ document.getElementById("search-form").addEventListener("submit", function(event
 
     // loop through the buildings array to find a match for the search input value
     for (var i = 0; i < newArr.length; i++) {
-        var newVar = newArr[i];
         if (newArr[i].name.toLowerCase() === searchValue) {
-            //if a match is found, zoom the map to the location of that building and open the corresponding marker 's popup
-            map.setView([newArr[i].lat, newArr[i].lng], 18);
-            var marker = L.marker([newArr[i].lat, newArr[i].lng], { icon: transparentIcon }).addTo(map);
+            //if a match is found, select the corresponding marker and animate the map to it
             var latLng = [newArr[i].lat, newArr[i].lng];
-            marker.bindPopup(`<b>${newArr[i].name}</b><br>
-            <a href="search.html?buildingIndex=${newArr.indexOf(newVar)}" target="_blank">More Info</a>`).openPopup();
-            map.flyTo(latLng);
-            marker.openPopup();
+            var marker = null;
+            map.eachLayer(function(layer) {
+                if (layer instanceof L.Marker && layer.getLatLng().equals(latLng)) {
+                    marker = layer;
+                }
+            });
+            if (marker) {
+                marker.fire('click');
+                map.flyTo(latLng, 18, {
+                    animate: true,
+                    duration: 2
+                });
+            }
             break;
         }
     }
 });
+
+
+
+
+
 
 function toggleNav() {
     var nav = document.getElementById("search-input");
