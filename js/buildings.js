@@ -7,7 +7,10 @@ var buildings = [{
     lng: -87.04003,
     link: './oncampus.html?buildingIndex=',
     desc: "The Valparaiso University Center for the Arts is a vibrant space for artists and arts-lovers.The Valparaiso University Center for the Arts showcases Valpo’s resources for theatre, music, and art — including the Brauer Museum of Art and the Bach Institute. The space is a home for creativity, expression, and arts appreciation.",
-    image: 'https://www.valpo.edu/center-for-the-arts/files/2015/03/20130428-Campus-Scenes-024web3.jpg'
+    image: 'https://www.valpo.edu/center-for-the-arts/files/2015/03/20130428-Campus-Scenes-024web3.jpg',
+    pdf: './floorplans/VUCA - Center for the Arts - Floor Plans.pdf'
+    
+    
 }, 
 {
     name: 'Center for Diaconal Ministry',
@@ -76,6 +79,7 @@ var buildings = [{
     link: './oncampus.html?buildingIndex=',
     desc: "The Harre Union is at the center of Valparaiso University and aims to be the heart of the campus experience. Home to many different offices, dining locations, and just overall the place where the community can gather, get involved, and make connections! We look forward to seeing you in the Harre Union and being part of your time at Valparaiso University!",
     image: 'https://marvel-b1-cdn.bc0a.com/f00000000181213/www.valpo.edu/union/files/2016/10/Harre-Union-800x799.jpg',
+    pdf: './floorplans/HU - Harre Union - Floor Plans.pdf'
 }, {
     name: 'Helge Center',
     lat: 41.46273,

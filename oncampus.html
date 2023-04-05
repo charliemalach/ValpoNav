@@ -22,8 +22,6 @@
                 <li><a href="./faq.html">FAQ</a></li>
                 <li><a href="./help.html" target="_blank">Help</a></li>
             </ul>
-
-
             <a href="./index.html" class="logo" style="padding-right: 25px">
                 <span>ValpoNav</span>
                 <img src="image/favicon.ico" width="25" height="25" alt="ValpoNav logo">
@@ -45,28 +43,32 @@
     <br>
 
     <div class="building-contents" style="color: black">
-        <h3><b>Description:</b> <span id="building-desc"></span></h3>
+        <h3><b>Description:</b></h3><span id="building-desc"></span>
         <br>
         <a id="building-link" style="color: black"></a>
     </div>
 
+    <br>
+    <div class="pdf-contents" style="color: black">
+        <h3 style="text-align: center"><a id="building-pdf" href="building-pdf" target="_blank"><b style="color: blue; text-decoration: underline;">Open Floor Plan</b> <span id="building-desc"></span></h3></a>
+        <br>
+        <!-- Change this code to make sure its not a relative link -->
+        <embed id="building-pdf2"  type="application/pdf" style="width: 100%; height: 100%">
+    </div>
 
     <script src="js/off-campus-array.js"></script>
     <script src="js/buildings.js"></script>
     <script>
         // Get the selected building index from the URL
         var index = parseInt(window.location.search.substring(1).split("=")[1]);
-        // var buildingArray = window.location.search.substring(1).split("=")[0] === "off_campus" ? off_campus_buildings : buildings;
 
         // Display the building information
         document.getElementById("building-name").innerHTML = buildings[index].name;
         document.getElementById("building-desc").innerHTML = buildings[index].desc;
         document.getElementById("building-image").src = buildings[index].image;
-        document.getElementById("building-link").innerHTML = buildings[index].link;
         document.getElementById("building-link").href = buildings[index].link;
-
-
+        document.getElementById("building-pdf").href = buildings[index].pdf;
+        document.getElementById("building-pdf2").src = buildings[index].pdf;
     </script>
 </body>
-
 </html>

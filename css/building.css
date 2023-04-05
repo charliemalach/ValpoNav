@@ -40,10 +40,26 @@ h2 {
 }
 
 .building-contents {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    background-color: #fff;
+    padding: 10px;
+    border: 3px solid black;
+    color: black;
+}
+
+.pdf-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 850px;
     background-color: #fff;
     padding: 10px;
     border: 3px solid black;
